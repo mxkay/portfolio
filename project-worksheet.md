@@ -6,11 +6,14 @@
 |---|---| ---|
 |Day 1| Wireframes / Priority Matrix / Timeline | Incomplete
 |Day 1| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 2| MVP & Bug Fixes | Incomplete
-|Day 3| Finish basic styling | Incomplete
-|Day 4| Add extra styling and animations | Incomplete
+|Day 2| Responsive design | Incomplete
+|Day 2| Project previews | Incomplete
+|Day 3| Contact modal | Incomplete
+|Day 3| Finishing touches on styling | Incomplete
+|Day 4| Project hover animation | Incomplete
+|Day 4| List languages & libraries for each project | Incomplete
+|Day 4| About me animation | Incomplete
 |Day 5| Present | Incomplete
-
 
 ## Project Description
 
