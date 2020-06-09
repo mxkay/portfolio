@@ -1,0 +1,75 @@
+html {
+    font-size: 20px;
+}
+
+/* BEGIN HEADER */
+
+header {
+    background: indigo;
+}
+
+header > .wrapper {
+    text-align: center;
+}
+
+/* profile photo */
+header > .wrapper > img {
+    /* image slightly overlaps the div below */
+    z-index: 1;
+    position: relative;
+    bottom: -0.5em;
+
+    width: 200px;
+    border-radius: 100px;
+    border: 5px solid whitesmoke;
+}
+
+header .ribbon {
+    /* give room for the image above to overlap this div */
+    padding: 0.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: white;
+}
+
+header .ribbon > * {
+    line-height: 1.5em;
+}
+
+header .ribbon > .button {
+    border-radius: 10px;
+    text-transform: uppercase;
+    background-color: grey;
+    color: white;
+}
+
+/* END HEADER */
+
+/* BEGIN PORTFOLIO */
+
+section#portfolio {
+    padding: 10px;
+}
+
+h1 {
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+section#portfolio .card {
+    height: 200px;
+    background-image: url('https://images.unsplash.com/photo-1515775356328-191f2e02390e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1004&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+section#portfolio .card .description {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background-color: rgba(0.5, 0.5, 0.5, 0.3);
+    color: white;
+}
