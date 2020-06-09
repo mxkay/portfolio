@@ -69,18 +69,24 @@ h1 {
 
 section#portfolio .card {
     height: 200px;
-    background-image: url('https://images.unsplash.com/photo-1515775356328-191f2e02390e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1004&q=80');
+    background-image: url('https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+}
+
+section#portfolio .card .title {
+    padding-left: 10px;
+    color: white;
 }
 
 section#portfolio .card .description {
     position: absolute;
     bottom: 0;
     padding: 10px;
-    background-color: rgba(0.5, 0.5, 0.5, 0.3);
+    background-color: rgba(0.25, 0.25, 0.25, 0.5);
     color: white;
+    border-radius: 0 0 10px 10px;
 }
 
 /* END PORTFOLIO */
