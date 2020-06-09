@@ -5,7 +5,7 @@
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1| Wireframes / Priority Matrix / Timeline | Incomplete
-|Day 1| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 1| Core Application Structure (HTML, CSS) | Complete
 |Day 2| Responsive design | Incomplete
 |Day 2| Project previews | Incomplete
 |Day 3| Contact modal | Incomplete
@@ -56,12 +56,12 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Core app structure | H | 1hr | -hr | -hr|
-| Project previews | H | 3hr | -hr | -hr|
+| Core app structure | H | 2hr | -hr | 2hr|
+| Project previews | H | 2hr | -hr | -hr|
 | Contact modal | H | 3hr | -hr | -hr |
-| Finishing touches on styling | H | 4hr | -hr | -hr|
+| Finishing touches on styling | H | 5hr | -hr | -hr|
 | Responsive design changes | H | 3hr | -hr | -hr|
-| Total |  | 14.0hrs| -hrs | -hrs |
+| Total |  | 15.0hrs| -hrs | -hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
