@@ -85,12 +85,13 @@ section#portfolio .card .description {
 /* END PORTFOLIO */
 
 
-/* Tablet */
+/* TABLET */
 @media only screen and (min-width: 600px) {
     header > .wrapper {
+        margin: 0 auto;
         display: flex;
         align-items: flex-end;
-        background-color: turquoise;
+        max-width: 800px;
     }
     
     /* profile photo */
@@ -111,13 +112,14 @@ section#portfolio .card .description {
         background-color: white;
     }
 
-    header .ribbon > * {
-        line-height: 1.5em;
-    }
-
     /* contact button */
     header .ribbon > .button {
         /* push to the right */
         margin-left: auto;
+    }
+
+    #portfolio {
+        margin: 75px auto;
+        max-width: 800px;
     }
 }
