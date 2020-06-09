@@ -67,30 +67,38 @@ h1 {
     font-size: 1.5rem;
 }
 
+/* BEGIN PROJECT CARD */
+
 section .card {
-    height: 200px;
-    background-image: url('https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: top;
     border-radius: 10px;
+    margin: 10px 0 10px 0;
 }
 
 section .card .title {
-    padding-left: 10px;
-    padding: 10px 0 0 10px;
+    margin: 0;
+    padding: 10px;
     background-color: rgba(0.25, 0.25, 0.25, 0.5);
     color: white;
     border-radius: 10px 10px 0 0;
 }
 
+section .card .image {
+    height: 100px;
+    width: 100%;
+    background-size: 105%;
+    background-position: top;
+    /* default image to display */
+    background-image: url('https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+}
+
 section .card .description {
-    position: absolute;
-    bottom: 0;
     padding: 10px;
     background-color: rgba(0.25, 0.25, 0.25, 0.5);
     color: white;
     border-radius: 0 0 10px 10px;
 }
+
+/* END PROJECT CARD */
 
 /* END PORTFOLIO */
 

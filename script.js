@@ -25,14 +25,13 @@ $.ajax({
     projects.forEach( (project, index) => {
         $projects.push($(`
             <div class="card" id="project${index}">
-                <div class="image">
-                    <h2 class="title">${project.title}</h2>
-                    <div class="description">${project.description}</div>
-                </div>
+                <h2 class="title">${project.title}</h2>
+                <div class="image" style="background-image: url(${project.image});"></div>
+                <div class="description">${project.description}</div>
             </div>
-            `)
+            `));
             // add background image
-            .css('background-image', `url(${project.image})`));
+            // .css('background-image', `url(${project.image})`));
         $('#portfolio > .wrapper').append($projects[index]);
         // $(`#project${index} > .image`).css('background', `url(${project.url}`);
     })
