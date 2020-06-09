@@ -1,5 +1,5 @@
 html {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 body {
@@ -47,7 +47,7 @@ header .ribbon #about_me {
     margin-bottom: 0.5em;
 }
 
-header .ribbon > .button {
+header .ribbon > .btn {
     border-radius: 10px;
     text-transform: uppercase;
     background-color: grey;
