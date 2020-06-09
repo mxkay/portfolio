@@ -6,7 +6,7 @@
 |---|---| ---|
 |Day 1| Wireframes / Priority Matrix / Timeline | Incomplete
 |Day 1| Core Application Structure (HTML, CSS) | Complete
-|Day 2| Responsive design | Incomplete
+|Day 2| Responsive design | Complete
 |Day 2| Project previews | Incomplete
 |Day 3| Contact modal | Incomplete
 |Day 3| Finishing touches on styling | Incomplete
@@ -60,7 +60,7 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 | Project previews | H | 2hr | -hr | -hr|
 | Contact modal | H | 3hr | -hr | -hr |
 | Finishing touches on styling | H | 5hr | -hr | -hr|
-| Responsive design changes | H | 3hr | -hr | -hr|
+| Responsive design changes | H | 3hr | -hr | 1hr|
 | Total |  | 15.0hrs| -hrs | -hrs |
 
 #### PostMVP
