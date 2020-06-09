@@ -44,6 +44,7 @@ header .ribbon > * {
 
 header .ribbon #about_me {
     padding: 0 1em 0 1em;
+    margin-bottom: 0.5em;
 }
 
 header .ribbon > .button {
