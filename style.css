@@ -119,6 +119,10 @@ section#portfolio .card .description {
         background-color: white;
     }
 
+    header .ribbon > #about_me {
+        text-align: left;
+    }
+
     /* contact button */
     header .ribbon > .button {
         /* push to the right */
