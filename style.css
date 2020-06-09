@@ -2,6 +2,10 @@ html {
     font-size: 20px;
 }
 
+body {
+    background-color: grey;
+}
+
 /* BEGIN HEADER */
 
 header {
@@ -27,7 +31,7 @@ header > .wrapper > img {
 header .ribbon {
     /* give room for the image above to overlap this div */
     padding: 0.5em;
-    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -36,6 +40,10 @@ header .ribbon {
 
 header .ribbon > * {
     line-height: 1.5em;
+}
+
+header .ribbon #about_me {
+    padding: 0 1em 0 1em;
 }
 
 header .ribbon > .button {
@@ -72,4 +80,44 @@ section#portfolio .card .description {
     padding: 10px;
     background-color: rgba(0.5, 0.5, 0.5, 0.3);
     color: white;
+}
+
+/* END PORTFOLIO */
+
+
+/* Tablet */
+@media only screen and (min-width: 600px) {
+    header > .wrapper {
+        display: flex;
+        align-items: flex-end;
+        background-color: turquoise;
+    }
+    
+    /* profile photo */
+    header > .wrapper > img {
+        width: 200px;
+        /* image slightly overlaps the div to the right */
+        bottom: 0;
+        left: 1em;
+        transform: translate(0, calc(50% - 2em));
+    }
+
+    header .ribbon {
+        /* margin-left: 200px; */
+        height: 4em;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        background-color: white;
+    }
+
+    header .ribbon > * {
+        line-height: 1.5em;
+    }
+
+    /* contact button */
+    header .ribbon > .button {
+        /* push to the right */
+        margin-left: auto;
+    }
 }
