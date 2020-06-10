@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Playfair+Display&display=swap" rel="stylesheet">
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,8 +26,8 @@
         <div class="wrapper">
             <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEGgyT2qrkIMw/profile-displayphoto-shrink_200_200/0?e=1597276800&v=beta&t=rCrcbBGGjnPiB70MVnIFvVkR06QcKFNTOaA7f0IwWI8" alt="profile picture">
             <div class="ribbon">
-                <div id="about_me">I am a Boston based fullstack software developer | she or they</div>
-                <button type="button" class="btn btn-secondary btn-lg">contact</button>
+                <div id="about_me">I am a Boston based fullstack software developer | <span class="pronouns">she or they</span></div>
+                <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#contactModal">contact</button>
             </div>
         </div>
     </header>
@@ -33,6 +36,62 @@
         <h1>Project Portfolio</h1>
         <div class="wrapper"></div>
     </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h3>Kay Vail</h3>
+                <p class="pronouns">she/her/hers or they/them/theirs</p>
+                <p>kayalyxvail@gmail.com</p>
+                <p>c: (508)-963-2451</p>
+                <hr>
+                <!-- NAME -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">your name:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Sender's name" aria-label="Sender's Name" aria-describedby="basic-addon2">
+                </div>
+                <!-- PRONOUNS -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">your pronouns:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Sender's pronouns" aria-label="Sender's pronouns" aria-describedby="basic-addon2">
+                </div>
+                <!-- EMAIL -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">from:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Sender's email" aria-label="Sender's email" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">@example.com</span>
+                    </div>
+                </div>
+                <!-- SUBJECT -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">body</span>
+                    </div>
+                    <textarea class="form-control" aria-label="body"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">send</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- script.js -->
     <script src="script.js"></script>

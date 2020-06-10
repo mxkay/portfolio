@@ -1,9 +1,17 @@
+* {
+    font-family: 'Arvo', serif;
+}
+
 html {
     font-size: 15px;
 }
 
 body {
     background-color: grey;
+}
+
+.pronouns {
+    font-style: italic;
 }
 
 /* BEGIN HEADER */
@@ -83,7 +91,7 @@ section .card .title {
 }
 
 section .card .image {
-    height: 100px;
+    height: 250px;
     width: 100%;
     background-size: 105%;
     background-position: top;
@@ -102,6 +110,17 @@ section .card .description {
 
 /* END PORTFOLIO */
 
+/* BEGIN MODAL */
+
+#contactModal {
+    text-align: center;
+}
+
+#contactModal h3 {
+    font-size: 2rem;
+}
+
+/* END MODAL */
 
 /* TABLET */
 @media only screen and (min-width: 600px) {
