@@ -6,22 +6,47 @@ html {
     font-size: 15px;
 }
 
-body {
-    background-color: grey;
-}
-
 .pronouns {
     font-style: italic;
 }
 
+iFrame {
+    position: fixed;
+    height: 200vh;
+    min-width: 100vh;
+    width: 200vw;
+    transform: translate(-25%, -25%);
+    z-index: -99;
+}
+
+/* BEGIN LANDING */
+
+.landing {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    line-height: 100vh;
+}
+
+.landing > img {
+    display: inline-block;
+    width: 200px;
+    border-radius: 1000px;
+    border: 8px solid whitesmoke;
+}
+
+/* END LANDING */
+
 /* BEGIN HEADER */
 
 header {
-    background: indigo;
+    /* background: indigo; */
 }
 
 .header__wrapper {
     text-align: center;
+    justify-content: stretch;
+    /* background: indigo; */
 }
 
 /* profile photo */
@@ -44,6 +69,7 @@ header {
     flex-direction: column;
     align-items: stretch;
     background-color: white;
+    border: 5px solid whitesmoke;
 }
 
 .header__wrapper__ribbon > * {
