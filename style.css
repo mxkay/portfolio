@@ -6,6 +6,11 @@ html {
     font-size: 15px;    
 }
 
+body {
+    /* cut off content that goes over the side of the page */
+    overflow-x: hidden;
+}
+
 h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -20,16 +25,6 @@ h2 {
     font-style: italic;
 }
 
-iFrame {
-    position: fixed;
-    height: 150vh;
-    width: 150vw;
-    top: -25vh;
-    left: -25vw;
-    z-index: -99;
-    opacity: 0.5;
-}
-
 /* BEGIN LANDING */
 
 .landing {
@@ -42,9 +37,18 @@ iFrame {
 }
 
 .landing__wrapper {
-    position: absolute;
+    position: relative;
     width: 100%;
     text-align: center;
+}
+
+.landing__wrapper > iFrame {
+    position: absolute;
+    width: 150vw;
+    height: 150vh;
+    transform: translate(calc(-50% - 100px), calc(-50% + 100px));
+    z-index: -99;
+    opacity: 0.5;
 }
 
 .landing__wrapper > img {
@@ -58,7 +62,7 @@ iFrame {
 }
 
 .landing__wrapper__container > h1, .landing__wrapper__container > p {
-    padding: 0.4em;
+    padding: 0.4em 20px;
     background-color: whitesmoke;
 }
 
@@ -74,7 +78,6 @@ iFrame {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background: indigo; */
 }
 
 /* profile photo */
@@ -121,7 +124,8 @@ iFrame {
 /* BEGIN MAIN */
 
 .main {
-    padding: 75px;
+    padding: 25px;
+    background-color: white;
 }
 
 .main__wrapper {
@@ -155,7 +159,7 @@ iFrame {
 
 .portfolio__card .image {
     height: 200px;
-    width: 300px;
+    width: 100%;
     background-size: 105%;
     background-position: top;
     /* default image to display */
