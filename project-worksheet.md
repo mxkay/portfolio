@@ -4,11 +4,11 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Wireframes / Priority Matrix / Timeline | Incomplete
+|Day 1| Wireframes / Priority Matrix / Timeline | Complete
 |Day 1| Core Application Structure (HTML, CSS) | Complete
 |Day 2| Responsive design | Complete
-|Day 2| Project previews | Incomplete
-|Day 3| Contact modal | Incomplete
+|Day 2| Project previews | Complete
+|Day 3| Contact modal | In Progress
 |Day 3| Finishing touches on styling | Incomplete
 |Day 4| Project hover animation | Incomplete
 |Day 4| List languages & libraries for each project | Incomplete
@@ -17,7 +17,7 @@
 
 ## Project Description
 
-This is a web application written in HTML, CSS, and Javascript with the purpose of showcasing my software developement project portfolio
+This is a web application for showcasing my skills in full-stack software engineering.
 
 ## Google Sheet
 
@@ -57,8 +57,8 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Core app structure | H | 2hr | -hr | 2hr|
-| Project previews | H | 2hr | -hr | -hr|
-| Contact modal | H | 3hr | -hr | -hr |
+| Project previews | H | 2hr | -hr | 4hr|
+| Contact modal | H | 3hr | -hr | 1hr |
 | Finishing touches on styling | H | 5hr | -hr | -hr|
 | Responsive design changes | H | 3hr | -hr | 1hr|
 | Total |  | 15.0hrs| -hrs | -hrs |
