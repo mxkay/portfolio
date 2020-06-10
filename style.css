@@ -3,9 +3,7 @@
 }
 
 html {
-    font-size: 15px;
-    /* cuts off any horizontal overflow */
-    
+    font-size: 15px;    
 }
 
 h1 {
@@ -24,9 +22,10 @@ h2 {
 
 iFrame {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    /* transform: translate(-25%, -25%); */
+    height: 150vh;
+    width: 150vw;
+    top: -25vh;
+    left: -25vw;
     z-index: -99;
     opacity: 0.5;
 }
@@ -37,11 +36,13 @@ iFrame {
     position: relative;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .landing__wrapper {
     position: absolute;
-    top: calc(50vh - 100px);
     width: 100%;
     text-align: center;
 }
@@ -57,8 +58,12 @@ iFrame {
 }
 
 .landing__wrapper__container > h1, .landing__wrapper__container > p {
-    padding: 0.3em;
+    padding: 0.4em;
     background-color: whitesmoke;
+}
+
+.landing__wrapper__container > button {
+    margin: 0 10px 0 10px;
 }
 
 /* END LANDING */
@@ -75,9 +80,9 @@ iFrame {
 /* profile photo */
 .header__wrapper > img {
     /* image slightly overlaps the div below */
-    /* z-index: 1;
+    z-index: 1;
     position: relative;
-    bottom: -0.5em; */
+    bottom: -0.5em;
 
     width: 100px;
     border-radius: 1000px;
@@ -127,28 +132,29 @@ iFrame {
 /* BEGIN PORTFOLIO */
 
 .portfolio__container {
-    display: flex;
+    /* display: flex;
+    flex-direction: column; */
     padding: 10px;
 }
 
 /* BEGIN PROJECT CARD */
 
-section .card {
+.portfolio__card {
     border-radius: 10px;
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
     background-color: whitesmoke;
     border: 1px solid black;
 }
 
-section .card .title {
+.portfolio__card .title {
     margin: 0;
     padding: 10px;
     border-radius: 10px 10px 0 0;
     background-color: whitesmoke;
 }
 
-section .card .image {
-    height: 250px;
+.portfolio__card .image {
+    height: 200px;
     width: 300px;
     background-size: 105%;
     background-position: top;
@@ -156,7 +162,7 @@ section .card .image {
     background-image: url('https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
 }
 
-section .card .description {
+.portfolio__card .description {
     padding: 10px;
     border-radius: 0 0 10px 10px;
 }

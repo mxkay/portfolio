@@ -24,7 +24,7 @@ $.ajax({
     // build a JQuery element for each project
     projects.forEach( (project, index) => {
         $projects.push($(`
-            <div class="card" id="project${index}">
+            <div class="portfolio__card" id="project${index}">
                 <h2 class="title">${project.title}</h2>
                 <div class="image" style="background-image: url(${project.image});"></div>
                 <div class="description">${project.description}</div>
