@@ -32,7 +32,7 @@ $.ajax({
             `));
             // add background image
             // .css('background-image', `url(${project.image})`));
-        $('#portfolio > .wrapper').append($projects[index]);
+        $('#portfolio__container').append($projects[index]);
         // $(`#project${index} > .image`).css('background', `url(${project.url}`);
     })
 
