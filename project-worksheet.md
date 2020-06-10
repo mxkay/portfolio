@@ -8,7 +8,7 @@
 |Day 1| Core Application Structure (HTML, CSS) | Complete
 |Day 2| Responsive design | Complete
 |Day 2| Project previews | Complete
-|Day 3| Contact modal | In Progress
+|Day 3| Contact modal | Complete
 |Day 3| Finishing touches on styling | Incomplete
 |Day 4| Project hover animation | Incomplete
 |Day 4| List languages & libraries for each project | Incomplete
