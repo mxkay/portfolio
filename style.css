@@ -33,7 +33,12 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #EB9486;
+}
+
+.portfolio__card > .title {
     color: #0D1F2D;
 }
 
