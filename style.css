@@ -89,6 +89,7 @@ a {
 }
 
 .landing__wrapper__container {
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -221,7 +222,7 @@ a {
 /* BEGIN ABOUT */
 
 .about-me__body {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -237,7 +238,7 @@ a {
 }
 
 .contact__body {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -268,44 +269,5 @@ a {
 @media only screen and (min-width: 600px) {
     html {
         font-size: 20px;    
-    }
-
-    .header__wrapper {
-        margin: 0 auto;
-        display: flex;
-        align-items: flex-end;
-        max-width: 800px;
-    }
-    
-    /* profile photo */
-    .header__wrapper > img {
-        /* image slightly overlaps the div to the right */
-        bottom: 0;
-        left: 1em;
-        transform: translate(0, calc(50% - 2em));
-    }
-
-    .header__wrapper__ribbon {
-        /* margin-left: 200px; */
-        height: 4.2em;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        background-color: white;
-        border-radius: 0 5em 5em 0;
-    }
-
-    .header__wrapper__ribbon > #splash {
-        text-align: left;
-    }
-
-    /* contact button */
-    .header__wrapper__ribbon > .button {
-        /* push to the right */
-        margin-left: auto;
-    }
-
-    .header__wrapper__ribbon > .btn {
-        border-radius: 0 5em 5em 0;
     }
 }
