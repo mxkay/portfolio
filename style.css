@@ -29,7 +29,7 @@ h2 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #F2F7F2;
+    color: #EB9486;
 }
 
 h3 {
@@ -133,7 +133,7 @@ a {
     line-height: 1.5em;
 }
 
-.header__wrapper__ribbon #about-me {
+.header__wrapper__ribbon #splash {
     padding: 0 1em 0 1em;
     margin-bottom: 0.5em;
 }
@@ -215,11 +215,7 @@ a {
 
 /* BEGIN ABOUT */
 
-/* END ABOUT */
-
-/* BEGIN CONTACT */
-
-.contact__body {
+.about-me__body {
     height: 100vh;
     max-width: 800px;
     margin: 0 auto;
@@ -227,8 +223,21 @@ a {
     text-align: center;
 }
 
-.contact__body__title {
-    color: #EB9486;
+/* END ABOUT */
+
+/* BEGIN CONTACT */
+
+.contact {
+    background-color: #7E7F9A;
+}
+
+.contact__body {
+    height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color: #F2F7F2;
 }
 
 .contact__body > button {
@@ -281,7 +290,7 @@ a {
         border-radius: 0 5em 5em 0;
     }
 
-    .header__wrapper__ribbon > #about-me {
+    .header__wrapper__ribbon > #splash {
         text-align: left;
     }
 
