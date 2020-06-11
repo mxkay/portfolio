@@ -130,20 +130,23 @@ header {
 
 .portfolio__body {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1100px;
 }
 
-.portfolio__container {
-    /* display: flex;
-    flex-direction: column; */
-    padding: 10px;
+#portfolio__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 /* BEGIN PROJECT CARD */
 
 .portfolio__card {
+    display: block;
+    width: 100%;
+    max-width: 500px;
     border-radius: 10px;
-    margin: 20px 0 20px 0;
+    margin: 20px;
     background-color: #F2F7F2;
     border: 1px solid #0D1F2D;
 }
@@ -158,7 +161,7 @@ header {
 .portfolio__card .image {
     height: 200px;
     width: 100%;
-    background-size: 105%;
+    background-size: cover;
     background-position: top;
     /* default image to display */
     background-image: url('https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
