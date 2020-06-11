@@ -59,8 +59,8 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 | Core app structure | H | 2hr | -hr | 2hr|
 | Project previews | H | 2hr | -hr | 4hr|
 | Contact modal | H | 3hr | -hr | 1hr |
-| Finishing touches on styling | H | 5hr | -hr | -hr|
-| Responsive design changes | H | 3hr | -hr | 1hr|
+| Finishing touches on styling | H | 5hr | -hr | 10hr|
+| Responsive design changes | H | 3hr | -hr | 3hr|
 | Total |  | 15.0hrs| -hrs | -hrs |
 
 #### PostMVP
