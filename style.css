@@ -1,9 +1,18 @@
+/* Colors Palette
+ * White: FFFFFF
+ * Mint Cream: F2F7F2
+ * Rich Black FOGRA 29: 0D1F2D
+ * Vivid Tangerine: 0D1F2D
+ * Rhythm: EB9486
+ */
+
 * {
     font-family: 'Arvo', serif;
 }
 
 html {
-    font-size: 16px;    
+    font-size: 16px;
+    color: #0D1F2D;
 }
 
 body {
@@ -19,6 +28,12 @@ h1 {
 h2 {
     text-decoration: underline;
     font-size: 1.5rem;
+    color: #F2F7F2;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #0D1F2D;
 }
 
 .pronouns {
@@ -26,7 +41,7 @@ h2 {
 }
 
 a {
-    color: black;
+    color: #0D1F2D;
     text-emphasis: none;
 }
 
@@ -59,7 +74,7 @@ a {
 .landing__wrapper > img {
     width: 200px;
     border-radius: 1000px;
-    border: 8px solid whitesmoke;
+    border: 8px solid #F2F7F2;
 }
 
 .landing__wrapper__container {
@@ -68,7 +83,7 @@ a {
 
 .landing__wrapper__container > h1, .landing__wrapper__container > p {
     padding: 0.4em 20px;
-    background-color: whitesmoke;
+    background-color: #F2F7F2;
 }
 
 .landing__wrapper__container > button {
@@ -94,7 +109,7 @@ a {
 
     width: 100px;
     border-radius: 1000px;
-    border: 5px solid whitesmoke;
+    border: 5px solid #F2F7F2;
 }
 
 .header__wrapper__ribbon {
@@ -105,7 +120,7 @@ a {
     flex-direction: column;
     align-items: stretch;
     background-color: white;
-    border: 0.1em solid whitesmoke;
+    border: 0.1em solid #F2F7F2;
 }
 
 .header__wrapper__ribbon > * {
@@ -120,7 +135,7 @@ a {
 .header__wrapper__ribbon > .btn {
     border-radius: 10px;
     text-transform: uppercase;
-    background-color: grey;
+    background-color: #0D1F2D;
     color: white;
 }
 
@@ -130,7 +145,7 @@ a {
 
 .main {
     padding: 25px;
-    background-color: white;
+    background-color: #0D1F2D;
 }
 
 .main__wrapper {
@@ -151,15 +166,15 @@ a {
 .portfolio__card {
     border-radius: 10px;
     margin: 20px 0 20px 0;
-    background-color: whitesmoke;
-    border: 1px solid black;
+    background-color: #F2F7F2;
+    border: 1px solid #0D1F2D;
 }
 
 .portfolio__card .title {
     margin: 0;
     padding: 10px;
     border-radius: 10px 10px 0 0;
-    background-color: whitesmoke;
+    background-color: #F2F7F2;
 }
 
 .portfolio__card .image {
@@ -177,12 +192,12 @@ a {
 }
 
 .description:hover {
-    color: black;
+    color: #0D1F2D;
     text-decoration: none;
 }
 
 .description:link {
-    color: black;
+    color: #0D1F2D;
     text-decoration: none;
 }
 

@@ -10,7 +10,6 @@ $.ajax({
 .then( data => {
     // console.log('data', data)
     const projects = data.feed.entry.map( project => {
-        console.log('project: ', project)
         return {
             title: project.gsx$title.$t,
             description: project.gsx$description.$t,
@@ -27,27 +26,13 @@ $.ajax({
         $projects.push($(`
             <a href="${project.url}">
                 <div class="portfolio__card" id="project${index}">
-                    <h2 class="title">${project.title}</h2>
+                    <h3 class="title">${project.title}</h3>
                     <div class="image" style="background-image: url(${project.image});"></div>
                     <div class="description">${project.description}</div>
                 </div>
             </a>
             `));
-            // add background image
-            // .css('background-image', `url(${project.image})`));
         $('#portfolio__container').append($projects[index]);
-        // $(`#project${index} > .image`).css('background', `url(${project.url}`);
     })
-
-    console.log($projects);
 })
 .catch( err => console.log('error loading ajax'));
-
-/* template for project card
-    <div class="card" id="project1">
-        <div class="image">
-            <h2 class="title">Title</h2>
-            <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vero neque voluptatem, repellat labore odio error ut minima!</div>
-        </div>
-    </div>
-*/
