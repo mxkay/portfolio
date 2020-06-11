@@ -23,8 +23,24 @@
     <title>Kay's Portfolio</title>
   </head>
   <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#portfolio">portfolio</a>
+                    <a class="nav-item nav-link" href="#about-me">about Me</a>
+                    <a class="nav-item nav-link" href="#contact">contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <div class="landing" class="iframe">
+    <div id="landing">
         <div class="landing__wrapper">
             <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEGgyT2qrkIMw/profile-displayphoto-shrink_200_200/0?e=1597276800&v=beta&t=rCrcbBGGjnPiB70MVnIFvVkR06QcKFNTOaA7f0IwWI8" alt="profile picture">
             <!-- https://www.desmos.com/calculator/ -->
@@ -37,25 +53,15 @@
         </div>
     </div>
 
-    <!-- <header>
-        <div class="header__wrapper">
-            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEGgyT2qrkIMw/profile-displayphoto-shrink_200_200/0?e=1597276800&v=beta&t=rCrcbBGGjnPiB70MVnIFvVkR06QcKFNTOaA7f0IwWI8" alt="profile picture">
-            <div class="header__wrapper__ribbon">
-                <div id="splash">Don't be shy, send me a message</div>
-                <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#contactModal">contact</button>
-            </div>
-        </div>
-    </header> -->
-
-    <section class="main">
-        <div class="main__body">
+    <section id="portfolio">
+        <div class="portfolio__body">
             <h2>Project Portfolio</h2>
-            <hr class="protfolio">
+            <hr>
             <div id="portfolio__container"></div>
         </div>
     </section>
 
-    <section class="about-me">
+    <section id="about-me">
         <div class="about-me__body">
             <h2 class="title">About Me</h2>
             <hr>
@@ -68,7 +74,7 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section id="contact">
         <div class="contact__body">
             <h2 class="title">Contact Me</h2>
             <hr>

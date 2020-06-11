@@ -58,7 +58,7 @@ a {
 
 /* BEGIN LANDING */
 
-.landing {
+#landing {
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -106,66 +106,26 @@ a {
 
 /* BEGIN HEADER -- depricated */
 
-.header__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* profile photo */
-.header__wrapper > img {
-    /* image slightly overlaps the div below */
-    z-index: 1;
-    position: relative;
-    bottom: -0.5em;
-
-    width: 100px;
-    border-radius: 1000px;
-    border: 5px solid #F2F7F2;
-}
-
-.header__wrapper__ribbon {
-    /* give room for the image above to overlap this div */
-    padding: 0.5em;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    background-color: white;
-    border: 0.1em solid #F2F7F2;
-}
-
-.header__wrapper__ribbon > * {
-    line-height: 1.5em;
-}
-
-.header__wrapper__ribbon #splash {
-    padding: 0 1em 0 1em;
-    margin-bottom: 0.5em;
-}
-
-.header__wrapper__ribbon > .btn {
-    border-radius: 10px;
-    text-transform: uppercase;
-    background-color: #0D1F2D;
-    color: white;
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #F2F7F2;
+    z-index: 100;
 }
 
 /* END HEADER */
 
-/* BEGIN MAIN */
+/* BEGIN PORTFOLIO */
 
-.main {
+#portfolio {
     padding: 25px;
     background-color: #0D1F2D;
 }
 
-.main__body {
+.portfolio__body {
     margin: 0 auto;
     max-width: 800px;
 }
-
-/* BEGIN PORTFOLIO */
 
 .portfolio__container {
     /* display: flex;
@@ -217,8 +177,6 @@ a {
 
 /* END PORTFOLIO */
 
-/* END MAIN */
-
 /* BEGIN ABOUT */
 
 .about-me__body {
@@ -233,7 +191,7 @@ a {
 
 /* BEGIN CONTACT */
 
-.contact {
+#contact {
     background-color: #7E7F9A;
 }
 
@@ -252,18 +210,6 @@ a {
 }
 
 /* END CONTACT */
-
-/* BEGIN MODAL */
-
-#contactModal {
-    text-align: center;
-}
-
-#contactModal h3 {
-    font-size: 2rem;
-}
-
-/* END MODAL */
 
 /* TABLET */
 @media only screen and (min-width: 600px) {
