@@ -10,6 +10,7 @@ $.ajax({
 .then( data => {
     // console.log('data', data)
     const projects = data.feed.entry.map( project => {
+        console.log('project: ', project)
         return {
             title: project.gsx$title.$t,
             description: project.gsx$description.$t,
@@ -24,11 +25,13 @@ $.ajax({
     // build a JQuery element for each project
     projects.forEach( (project, index) => {
         $projects.push($(`
-            <div class="portfolio__card" id="project${index}">
-                <h2 class="title">${project.title}</h2>
-                <div class="image" style="background-image: url(${project.image});"></div>
-                <div class="description">${project.description}</div>
-            </div>
+            <a href="${project.url}">
+                <div class="portfolio__card" id="project${index}">
+                    <h2 class="title">${project.title}</h2>
+                    <div class="image" style="background-image: url(${project.image});"></div>
+                    <div class="description">${project.description}</div>
+                </div>
+            </a>
             `));
             // add background image
             // .css('background-image', `url(${project.image})`));
