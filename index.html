@@ -49,12 +49,42 @@
     </header> -->
 
     <section class="main">
-        <div class="main__wrapper">
+        <div class="main__body">
             <h2>Project Portfolio</h2>
+            <hr class="protfolio">
             <div id="portfolio__container"></div>
         </div>
     </section>
     
+    <section class="contact">
+        <div class="contact__body">
+            <h2 class="contact__body__title">Contact Me</h5>
+            <hr>
+            <h3>Kay Vail</h3>
+            <p class="pronouns">she/her or they/them</p>
+            <p>kayalyxvail@gmail.com</p>
+            <p>c: (508)-963-2451</p>
+            <hr>
+            <!-- NAME -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="your name" aria-label="your name" aria-describedby="basic-addon2">
+            </div>
+            <!-- PRONOUNS -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="your pronouns" aria-label="your pronouns" aria-describedby="basic-addon2">
+            </div>
+            <!-- EMAIL -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="your email" aria-label="your full email address" aria-describedby="basic-addon2">
+            </div>
+            <!-- SUBJECT -->
+            <div class="input-group">
+                <textarea class="form-control" placeholder="your message to me" aria-label="your message to Kay"></textarea>
+            </div>
+            <button type="button" class="btn btn-dark">SEND</button>
+        </div>
+    </section>
+
     <!-- Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -89,10 +119,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">send</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+            <button type="button" class="btn btn-dark" data-dismiss="modal">SEND</button>
             </div>
-        </div>
         </div>
     </div>
 

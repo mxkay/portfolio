@@ -1,9 +1,9 @@
 /* Colors Palette
  * White: FFFFFF
  * Mint Cream: F2F7F2
- * Rich Black FOGRA 29: 0D1F2D
- * Vivid Tangerine: 0D1F2D
- * Rhythm: EB9486
+ * Prusian Blue: 0D1F2D
+ * Vivid Tangerine: EB9486
+ * Rhythm: 7E7F9A
  */
 
 * {
@@ -26,8 +26,9 @@ h1 {
 }
 
 h2 {
-    text-decoration: underline;
+    text-align: center;
     font-size: 1.5rem;
+    font-weight: bold;
     color: #F2F7F2;
 }
 
@@ -43,6 +44,11 @@ h3 {
 a {
     color: #0D1F2D;
     text-emphasis: none;
+}
+
+.btn {
+    font-weight: bold;
+    letter-spacing: 0.2em;
 }
 
 /* BEGIN LANDING */
@@ -92,7 +98,7 @@ a {
 
 /* END LANDING */
 
-/* BEGIN HEADER */
+/* BEGIN HEADER -- depricated */
 
 .header__wrapper {
     display: flex;
@@ -148,7 +154,7 @@ a {
     background-color: #0D1F2D;
 }
 
-.main__wrapper {
+.main__body {
     margin: 0 auto;
     max-width: 800px;
 }
@@ -206,6 +212,31 @@ a {
 /* END PORTFOLIO */
 
 /* END MAIN */
+
+/* BEGIN ABOUT */
+
+/* END ABOUT */
+
+/* BEGIN CONTACT */
+
+.contact__body {
+    height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact__body__title {
+    color: #EB9486;
+}
+
+.contact__body > button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* END CONTACT */
 
 /* BEGIN MODAL */
 
