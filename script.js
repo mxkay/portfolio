@@ -21,15 +21,15 @@ $.ajax({
     // initialize array for project card JQuery elements
     $projects = [];
 
-    // build a JQuery element for each project
+    // build a jQuery element for each project
     projects.forEach( (project, index) => {
         $projects.push($(`
-            <a href="${project.url}" class="portfolio__card" id="project${index}">
-                <h3 class="title">${project.title}</h3>
-                <div class="image" style="background-image: url(${project.image});"></div>
-                <div class="description">${project.description}</div>
-            </a>
-            `));
+        <a href="${project.url}" class="portfolio__card" id="project${index}">
+            <h3 class="title">${project.title}</h3>
+            <div class="image" style="background-image: url(${project.image});"></div>
+            <div class="description">${project.description}</div>
+        </a>
+        `));
         $('#portfolio__container').append($projects[index]);
     })
 })

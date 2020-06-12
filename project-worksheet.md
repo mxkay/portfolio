@@ -12,12 +12,12 @@
 |Day 3| Finishing touches on styling | Incomplete
 |Day 4| Project hover animation | Incomplete
 |Day 4| List languages & libraries for each project | Incomplete
-|Day 4| About me animation | Incomplete
+|Day 4| About me animation | Canceled
 |Day 5| Present | Incomplete
 
 ## Project Description
 
-This is a web application for showcasing my skills in full-stack software engineering.
+This is a web application for showcasing my skills as a full-stack software developer. It includes a project portfolio, information about me, and methods to contact me. New projects can be easily added to the page by adding information (title, description, image, url) to the spreadsheet below.
 
 ## Google Sheet
 
@@ -29,7 +29,7 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 - [Mobile with Modal](images/wireframe_mobile_modal.jpg)
 - [Desktop](images/wireframe_desktop.jpg)
 - [Desktop with Modal](images/wireframe_desktop_modal.jpg)
-
+- [Landing Section](images/wireframe_landing_section.jpg) (not part of original draft)
 
 ## Time/Priority Matrix 
 
@@ -41,7 +41,7 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 
 - Core app structure
 - Project previews 
-- Contact modal 
+- Contact modal
 - Finishing touches on styling
 - Responsive design changes
 
@@ -56,12 +56,12 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Core app structure | H | 2hr | -hr | 2hr|
-| Project previews | H | 2hr | -hr | 4hr|
-| Contact modal | H | 3hr | -hr | 1hr |
-| Finishing touches on styling | H | 5hr | -hr | 10hr|
-| Responsive design changes | H | 3hr | -hr | 3hr|
-| Total |  | 15.0hrs| -hrs | -hrs |
+| Core app structure | H | 2hr | 0hr | 2hr|
+| Project previews | H | 2hr | 0hr | 4hr|
+| Contact modal | H | 3hr | 0hr | 1hr |
+| Finishing touches on styling | H | 5hr | 0hr | 10hr|
+| Responsive design changes | H | 3hr | 0hr | 3hr|
+| Total |  | 15hrs| 0hrs | 20hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
@@ -69,7 +69,7 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 | Project hover animation | M | 1hr | -hr | -hr|
 | List languages & libraries for each project | L | 3hrs| -hr | -hr |
 | About me animation | L | 1hr | -hr | -hr|
-| Total | H | 5hrs| -hrs | -hrs |
+| Total |  | 5hrs| -hrs | -hrs |
 
 ## Additional Libraries
 - JQuery
@@ -80,14 +80,50 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+// build a jQuery element for each project
+projects.forEach( (project, index) => {
+	$projects.push($(`
+	<a href="${project.url}" class="portfolio__card" id="project${index}">
+		<h3 class="title">${project.title}</h3>
+		<div class="image" style="background-image: url(${project.image});"></div>
+		<div class="description">${project.description}</div>
+	</a>
+	`));
+	$('#portfolio__container').append($projects[index]);
+})
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+***see all issues on [github](https://github.com/mxkay/portfolio/issues)***
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+* I noticed the amount of content on the page was overwhelming, and it felt like I was skipping the introduction and going straight into projects. To make a more comfortable and inviting experience, I added a landing section at the top of my page that acts as an introduction.
+
+* The iframe I used on the landing page would trigger horizontal scrolling on some screen sizes. I resolved this by limitting the iframe's width, so it is never larger than the viewport.
+
+* I wanted to fit more projects on the page at once in my portfolio section (they were originally in a single column). To achieve this, I limited the width of the cards and arranged them in a flexbox. It took some experimentation to get the flex attributes just how I wanted them.
+
+* I got this error,
+```
+jQuery.Deferred exception: url is not defined ReferenceError: url is not defined
+    at file:///home/kay/seir-526/project1/project-1-portfolio/script.js:27:20
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (file:///home/kay/seir-526/project1/project-1-portfolio/script.js:25:14)
+    at e (https://code.jquery.com/jquery-3.5.1.min.js:2:30005)
+    at t (https://code.jquery.com/jquery-3.5.1.min.js:2:30307) undefined
+```
+
+because I forgot to write the project method before calling the url property
+
+```// build a jQuery element for each project
+projects.forEach( (project, index) => {
+	$projects.push($(`
+	<a href="${url}" class="port...
+```
+
+The correct syntax looks like,
+
+```// build a jQuery element for each project
+projects.forEach( (project, index) => {
+	$projects.push($(`
+	<a href="${project.url}" class="port...
+```
