@@ -76,9 +76,9 @@ https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjt
 - Bootstrap
 
 ## Code Snippet
+ 
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
-
+This is how I build project cards into the DOM using jQuery. This is nested inside of the ajax.then function that we learned in class. It was challenging and educational to learn the proper syntax to make this work correctly.
 ```
 // build a jQuery element for each project
 projects.forEach( (project, index) => {
@@ -92,6 +92,39 @@ projects.forEach( (project, index) => {
 	$('#portfolio__container').append($projects[index]);
 })
 ```
+This is the CSS I used to style the cards on the page within the portfolio__container div
+```
+/* BEGIN PORTFOLIO */
+
+#portfolio {
+    padding: 25px;
+    background-color: #0D1F2D;
+}
+
+.portfolio__body {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+#portfolio__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/* BEGIN PROJECT CARD */
+
+.portfolio__card {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #F2F7F2;
+    border: 1px solid #0D1F2D;
+}
+```
+
 
 ## Issues and Resolutions
 ***see all issues on [github](https://github.com/mxkay/portfolio/issues)***

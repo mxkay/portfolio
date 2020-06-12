@@ -38,10 +38,6 @@ h3 {
     color: #EB9486;
 }
 
-.portfolio__card > .title {
-    color: #0D1F2D;
-}
-
 .pronouns {
     font-style: italic;
 }
@@ -156,6 +152,7 @@ header {
     padding: 10px;
     border-radius: 10px 10px 0 0;
     background-color: #F2F7F2;
+    color: #0D1F2D;
 }
 
 .portfolio__card .image {
