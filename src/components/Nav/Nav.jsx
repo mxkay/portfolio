@@ -51,8 +51,7 @@ const Nav = () => {
 
 const styles = {
     buttonGroup: {
-        width: "80%",
-        maxWidth: 1200 + "px",
+        width: "100%"
     },
     button: {
         backgroundColor: "#777",
