@@ -44,7 +44,6 @@ const Nav = () => {
                 >Contact
                 </ToggleButton>
             </ToggleButtonGroup>
-            <p>{navigation.page}</p>
         </div>
     );
 }
