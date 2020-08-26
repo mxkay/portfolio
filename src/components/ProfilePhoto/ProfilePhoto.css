@@ -3,6 +3,17 @@
     to {transform:rotate(10deg);}
 }
 
+@keyframes reverse-wobble {
+    from {
+        transform:translateY(-4px);
+        transform:rotate(10deg);
+    }
+    to {
+        transform:translateY(4px);
+        transform:rotate(-10deg);
+    }
+}
+
 .profile-photo-wrapper {
     width: 8em;
     height: 8em;
@@ -24,7 +35,9 @@
     left: -10%;
     width: 110%;
     height: 110%;
+    border-radius: 50%;
     background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1598320589/20200821_160142_gndsbs.jpg);
     background-size: cover;
-    animation: wobble 2s ease-in-out 2s infinite alternate;
+    animation: reverse-wobble 2s ease-in-out infinite alternate;
+    
 }
