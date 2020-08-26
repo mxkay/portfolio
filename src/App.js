@@ -23,8 +23,8 @@ function App() {
       }}>
         <Background>
           <Header />
-          <Body>
-            <Nav />
+          <Body nav={<Nav/>}>
+            
           </Body>
         </Background>
       </NavigationContext.Provider>
