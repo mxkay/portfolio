@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from "react"
-
-import "./Background.css"
+import React, { useRef, useEffect } from "react";
+import "./Background.css";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Background = props => {
-  
+    const { height, width } = useWindowDimensions();
     const canvasRef = useRef(null)
     
     const draw = ( ctx, size, h, w ) => {
@@ -46,8 +46,7 @@ const Background = props => {
         const canvas = canvasRef.current
         const context = canvas.getContext("2d")
         
-        const w = window.innerWidth; const h = window.innerHeight;
-        const size = (h > w ? h : w);
+        const size = (height > width ? height : width);
         canvas.width = size;
         canvas.height = size;
         canvas.style.width = size + "px";
@@ -55,11 +54,11 @@ const Background = props => {
 
         //Our draw come here
         const interval = setInterval(() => {
-            draw(context, size, h, w );
+            draw(context, size, height, width );
         }, 10);
 
         return () => clearInterval(interval);
-    }, [draw]);
+    }, [draw, height, width]);
   
     return (
         <div id="background-wrapper">
