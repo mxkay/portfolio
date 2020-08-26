@@ -1,6 +1,6 @@
 .body {
+    height: 80%;
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    overflow: scroll;
 }
