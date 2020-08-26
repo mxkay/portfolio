@@ -13,7 +13,8 @@
     padding-bottom: 0.5em;
     left: -5em;
     border-radius: 0 1em 1em 0;
-    background-color: #CCC;
+    border: 4px solid #CCC;
+    background-color: #FFF;
     text-align: left;
     line-height: 0;
     font-weight: 800;

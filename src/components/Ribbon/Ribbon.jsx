@@ -7,7 +7,7 @@ const Ribbon = () => {
             <div className="ribbon">
                 <div className="ribbon-name-wrapper">
                     <p className="ribbon-name">Kay Vail</p>
-                    <p className="ribbon-pronouns">they/she</p>
+                    <p className="ribbon-pronouns">she/they</p>
                 </div>
                 <p className="ribbon-title">Full Stack Software Developer</p>
             </div>
