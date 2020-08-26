@@ -52,13 +52,12 @@ const Background = props => {
         canvas.style.width = size + "px";
         canvas.style.height = size + "px";
 
-        //Our draw come here
         const interval = setInterval(() => {
             draw(context, size, height, width );
         }, 20);
 
         return () => clearInterval(interval);
-    }, [draw, height, width]);
+    }, []);
   
     return (
         <div className="background-wrapper">
