@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { ToggleButton, ToggleButtonGroup } from "react-bootstrap";
-import "./Nav.css";
 import NavigationContext from "../../hooks/NavigationContext";
 import { findByLabelText } from "@testing-library/react";
 
