@@ -1,122 +1,68 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Unit 1 Project Build A Portfolio Site
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#### Overview
+## Available Scripts
 
-This project will give you a chance to use the skills we've learned in class to create a site that highlights the skills and projects you'll be working on in WDI. You'll get a chance to use JavaScript to tackle interactions such as an image slider, a responsive hamburger menu, and quotes that fade in and out on a timer.
+In the project directory, you can run:
 
-Make sure to customize the design and content of the website to make it your own.
+### `yarn start`
 
-You will be working individually for this project, but we'll be guiding you throughout the process and helping as you go.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
----
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-#### Requirements
+### `yarn test`
 
-Your work must:
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Use semantic markup for HTML and CSS, adhering to best practices.
-- Use CSS GRID to create a multi-column layout.
-- Use Flexbox for content
-- Must be mobile mobile first, then tablet and desktop responsive.
-- Must pull in projects via API call from google sheet 
-- Be deployed and accessible online either via Github Pages or Surge. 
----
+### `yarn build`
 
-#### Necessary Deliverables
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- An About, Projects, Contact form 
-- Site must be created using a "mobile first" approach. 
-- A Git repository, hosted on your personal GitHub, that includes a link to your hosted site. Site url should be in the form of githubusername.github.io. 
-- Repo must contain frequent commits (min 15+) dating back to the beginning of the project.
-- An updated project workshheet will all sections filled out accordingly. 
-- An in-class demo of the site that shows off the interactions you worked on.
-- A mobile nav that expands and collapses when a user clicks on the hamburger icon.
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## Portfolio Samples
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Check out portfoliios that look awesome and emulate the parts that speak to you. Here are some that we like but you should google around and find stuff you're into.
+### `yarn eject`
 
- - [denisechandler.com](http://www.denisechandler.com/)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
- - [mattfarely.ca](http://mattfarley.ca/)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
- - [sebkay.com](http://sebkay.com/)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
- - [imdev.in](https://imdev.in/)
- 
- ### Previous SEI Students
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
- - [helloaileen.com](http://helloaileen.com)
- 
- - [eloise-ress-barrow.surge.sh/](http://eloise-ress-barrow.surge.sh/#writing)
+## Learn More
 
- - [lianapenn.com](https://www.lianapenn.com/)
- 
- - [robertdiscipio.surge.sh/](http://robertdiscipio.surge.sh/)
- 
- - [andrewhollingworth.com/](http://andrewhollingworth.com/)
- 
- - [jessicalandzberg.github.io/](https://jessicalandzberg.github.io/Unit_1_Project/#myJourney0)
- 
- - [ga profiles](https://profiles.generalassemb.ly/profiles)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Finding Good Portfolio Sites To Emulate - 10 min
+### Code Splitting
 
-Search and compare at least 3 profile web sites.  Record your findings in the table below and include some aspect of the site that you would like to incorporate into your own site. 
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-Link To Site  | One Thing I'd Like To Incorporate | Initial Research On That Item
-| ------------- | ------------- | ------------- |
-| [http://www.denisechandler.com/](http://www.denisechandler.com/)| initial animation\drawing on page load
-|[jkeohan.com](jkeohan.com) | mouseover on a project triggers animations |
-| [http://mattfarley.ca/](http://mattfarley.ca/) |  layout of the projects
+### Analyzing the Bundle Size
 
-#### Starter Code
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-No starter code has been provided for this project, as you will be building your site from scratch. As an option, you can use the [HTML5 Boilerplate](https://html5boilerplate.com/) as a template to get started.
+### Making a Progressive Web App
 
----
-#### Suggested Ways to Get Started
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-- Don't hesitate to write throwaway code to solve short-term problems.
-- Read the documentation for whatever technologies you use. **Most of the time — but not always — there is a tutorial you can follow, and learning to read documentation is crucial to your success as a developer.**
-- **Write pseudocode before you write any JavaScript code.** Planning out and thinking through interactions for a website is an important step that will save you time and effort when you start actually coding.
-- Do not simply copy and paste code that you find online! It is OK (and highly encouraged) to use resources like Stack Overflow when thinking through interactions, but use these sites as a guide and then write the code on your own.
+### Advanced Configuration
 
-#### Front End Frameworks
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Try exploring these front end frameworks:
+### Deployment
 
-- [https://materializecss.com/](https://materializecss.com/)
-- [https://getbootstrap.com/](https://getbootstrap.com/)
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
----
-#### Hungry For More?
+### `yarn build` fails to minify
 
-If you're looking for an extra challenge, try tackling some of the tasks below:
-
-* Add validation to the contact form to make sure the user has filled out all required fields before submitting.
-* Add a skills section featuring skills you have/will have learned in the class.
-* Add a carousel 
-
----
-
-#### Additional Resources
-
-- Joe's [FEWD Trello Board](https://trello.com/b/yqrvugBk/lectures)
-- Joe's YouTube 3 Part Sereis on [jQuery Top Nav Animation On Scroll](https://www.youtube.com/watch?v=mRsF-a3qFZE&t=176s)
-
-
-#### Need More Review?
-
-
-- HTML/CSS
-	- [Practice CSS Selectors with CSS Diner](https://flukeout.github.io/)
-	- [Flexbox Froggy](http://flexboxfroggy.com/)
-
-
-- JavaScript
-	- [JavaScript Timers](https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Timers)
-
----
-
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
