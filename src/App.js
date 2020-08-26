@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Background from "./components/Background/Background"
+import NavigationContext from "./hooks/NavigationContext";
+
+import Background from "./components/Background/Background";
+import Header from "./components/Header/Header";
+import Nav from "./components/Nav/Nav";
 
 function App() {
+  const [navigation, updateNavigation] = useState({ page: "projects" });
+  const setCurrentPage = (value) => {
+    updateNavigation({ ...navigation, page: value });
+  }
+
   return (
     <div className="App">
-      <Background>
-        <p>Test</p>
-      </Background>
+      <NavigationContext.Provider value={{
+          navigation,
+          setCurrentPage
+      }}>
+        <Background>
+          <Header />
+          <Nav />
+        </Background>
+      </NavigationContext.Provider>
     </div>
   );
 }
