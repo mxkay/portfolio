@@ -8,15 +8,15 @@
 
 .ribbon {
     position: absolute;
+    padding: 0.5em;
     padding-left: 6em;
     padding-right: 1em;
-    padding-bottom: 0.5em;
     left: -5em;
     border-radius: 0 1em 1em 0;
     border: 4px solid #CCC;
     background-color: #FFF;
     text-align: left;
-    line-height: 0;
+    line-height: 1.8em;
     font-weight: 800;
 }
 
@@ -39,4 +39,5 @@
 .ribbon-title {
     font-size: 0.9rem;
     font-weight: 800;
+    line-height: 0;
 }
