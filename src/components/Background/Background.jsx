@@ -61,11 +61,11 @@ const Background = props => {
     }, [draw, height, width]);
   
     return (
-        <div id="background-wrapper">
-            <div id="background">
+        <div className="background-wrapper">
+            <div className="background">
                 <canvas ref={canvasRef} {...props}/>
             </div>
-            <div id="content">
+            <div className="content">
                 {props.children}
             </div>
         </div>
