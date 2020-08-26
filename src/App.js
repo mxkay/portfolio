@@ -8,6 +8,7 @@ import Background from "./components/Background/Background";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 import Nav from "./components/Nav/Nav";
+import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 
 function App() {
   const [navigation, updateNavigation] = useState({ page: "projects" });
@@ -24,7 +25,15 @@ function App() {
         <Background>
           <Header />
           <Body nav={<Nav/>}>
-            
+            {navigation.page === "projects" ?
+              <ProjectPortfolio />
+            :navigation.page === "about" ?
+              <></>
+            :navigation.page === "contact" ?
+              <></>
+            :
+              <></>
+            }
           </Body>
         </Background>
       </NavigationContext.Provider>
