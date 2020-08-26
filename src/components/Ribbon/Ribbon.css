@@ -1,0 +1,41 @@
+.ribbon-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    z-index: -1;
+}
+
+.ribbon {
+    position: absolute;
+    padding-left: 6em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    left: -5em;
+    border-radius: 0 1em 1em 0;
+    background-color: #CCC;
+    text-align: left;
+    line-height: 0;
+    font-weight: 800;
+}
+
+.ribbon-name-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.ribbon-name {
+    font-size: 1.8rem;
+}
+
+.ribbon-pronouns {
+    font-size: 1rem;
+    color: #666;
+}
+
+.ribbon-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+}
