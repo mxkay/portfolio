@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from "react"
+
+import "./Background.css"
 
 const Background = props => {
   
@@ -15,16 +17,16 @@ const Background = props => {
         const time = (new Date()).getTime();
         ctx.clearRect(0, 0, size, size);
 
-        ctx.strokeStyle = '#CCC';
+        ctx.strokeStyle = "#CCC";
         ctx.lineWidth = 4;
-        ctx.lineJoin = 'round';
+        ctx.lineJoin = "round";
 
         for(let i = 0; i <= 8; i++) {
             
             ctx.moveTo(size, size);
             ctx.beginPath();
             
-            const r = (i + (time % 5000)/5000);
+            const r = (i + 1 - (time % 5000)/5000);
 
             Array.from(Array(Math.floor(i > 0 ? r * 100 + 2 : 101 )).keys())
             .forEach(idx => {
@@ -42,14 +44,14 @@ const Background = props => {
     useEffect(() => {
         
         const canvas = canvasRef.current
-        const context = canvas.getContext('2d')
+        const context = canvas.getContext("2d")
         
         const w = window.innerWidth; const h = window.innerHeight;
         const size = (h > w ? h : w);
         canvas.width = size;
         canvas.height = size;
-        canvas.style.width = size + 'px';
-        canvas.style.height = size + 'px';
+        canvas.style.width = size + "px";
+        canvas.style.height = size + "px";
 
         //Our draw come here
         const interval = setInterval(() => {
@@ -59,7 +61,16 @@ const Background = props => {
         return () => clearInterval(interval);
     }, [draw]);
   
-    return <canvas ref={canvasRef} {...props}/>;
+    return (
+        <div id="background-wrapper">
+            <div id="background">
+                <canvas ref={canvasRef} {...props}/>
+            </div>
+            <div id="content">
+                {props.children}
+            </div>
+        </div>
+    );
 }
 
 export default Background
