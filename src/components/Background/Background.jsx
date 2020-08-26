@@ -26,7 +26,7 @@ const Background = props => {
             ctx.moveTo(size, size);
             ctx.beginPath();
             
-            const r = (i + 1 - (time % 5000)/5000);
+            const r = (i + 1 - (time % 20000)/20000);
 
             Array.from(Array(Math.floor(i > 0 ? r * 100 + 2 : 101 )).keys())
             .forEach(idx => {
@@ -55,7 +55,7 @@ const Background = props => {
         //Our draw come here
         const interval = setInterval(() => {
             draw(context, size, height, width );
-        }, 10);
+        }, 20);
 
         return () => clearInterval(interval);
     }, [draw, height, width]);
