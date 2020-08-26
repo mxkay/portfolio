@@ -6,6 +6,7 @@ import NavigationContext from "./hooks/NavigationContext";
 
 import Background from "./components/Background/Background";
 import Header from "./components/Header/Header";
+import Body from "./components/Body/Body";
 import Nav from "./components/Nav/Nav";
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
       }}>
         <Background>
           <Header />
-          <Nav />
+          <Body>
+            <Nav />
+          </Body>
         </Background>
       </NavigationContext.Provider>
     </div>
