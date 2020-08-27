@@ -14,30 +14,53 @@ const Background = props => {
         const trans_y = (x,y) =>
             y + 0.125 * (Math.cos(4*x) + Math.sin(4*y) - 1);
 
-        const time = (new Date()).getTime();
+        const time = (new Date()).getTime() % 20000 / 20000;
         ctx.clearRect(0, 0, size, size);
 
         ctx.strokeStyle = "#CCC";
         ctx.lineWidth = 4;
         ctx.lineJoin = "round";
+        const sides = 9;
+        const layers = 8;
 
-        for(let i = 0; i <= 8; i++) {
-            
-            ctx.moveTo(size, size);
-            ctx.beginPath();
-            
-            const r = (i + 1 - (time % 20000)/20000);
+        for(let i = 0; i <= layers; i++) {
 
-            Array.from(Array(Math.floor(i > 0 ? r * 100 + 2 : 101 )).keys())
-            .forEach(idx => {
-                const t = 2*idx * 0.0314159265 / (r ? r : 1);
-                const x = r * Math.cos(t);
-                const y = r * Math.sin(t);
+            Array.from(Array(sides).keys())
+            .forEach(index => {
 
+                let aIndex = 2 * index;
+
+                let r = i + 1 - time;
+                let a = aIndex * 2 * 3.14159265 / sides;
+                const x_0 = r * Math.cos(a);
+                const y_0 = r * Math.sin(a);
+                ctx.moveTo( w / 2 + size/10 * trans_x(x_0,y_0), h / 2 + size/10 * trans_y(x_0,y_0));
+
+                ctx.fillStyle = `rgba(204,204,204,${(r - 0.5)/layers})`;
+                ctx.beginPath();
+
+                r = i - time;
+                r = r > 0 ? r : 0;
+                a = aIndex * 2 * 3.14159265 / sides;
+                let x = r * Math.cos(a);
+                let y = r * Math.sin(a);
                 ctx.lineTo( w / 2 + size/10 * trans_x(x,y), h / 2 + size/10 * trans_y(x,y));
+
+                aIndex += 1;
+
+                r = i + 1 - time;
+                a = aIndex * 2 * 3.14159265 / sides;
+                x = r * Math.cos(a);
+                y = r * Math.sin(a);
+                ctx.lineTo( w / 2 + size/10 * trans_x(x,y), h / 2 + size/10 * trans_y(x,y));
+                
+                r = i - time;
+                r = r > 0 ? r : 0;
+                a = aIndex * 2 * 3.14159265 / sides;
+                ctx.lineTo( w / 2 + size/10 * trans_x(x_0,y_0), h / 2 + size/10 * trans_y(x_0,y_0));
+
+                ctx.fill();
             });
-            
-            ctx.stroke();
         }
     }
     
@@ -54,7 +77,7 @@ const Background = props => {
 
         const interval = setInterval(() => {
             draw(context, size, height, width );
-        }, 20);
+        }, 50);
 
         return () => clearInterval(interval);
     }, []);
