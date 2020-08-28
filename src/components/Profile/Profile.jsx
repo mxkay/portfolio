@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 import "./Profile.css";
 
-// import ProfilePhoto from "../ProfilePhoto/ProfilePhoto";
-// import ProfileBanner from "../ProfileBanner/ProfileBanner";
-
 const Profile = () => {
+    const { height, width } = useWindowDimensions();
+
     const [profileData, updateProfileData] = useState({
         name: "",
         pronouns: "",
@@ -36,9 +36,9 @@ const Profile = () => {
     },[]);
 
     return (
-        <div className="profile">
-            <img className="profile-photo" src={profileData.photo} />
-            <div className="profile-wrapper">
+        <div className="profile-wrapper">
+            <div className="profile">
+                <img className="profile-photo" src={profileData.photo} />
                 <div className="profile-name">{profileData.name}</div>
                 <div className="profile-pronouns">{profileData.pronouns}</div>
                 <div className="profile-title">{profileData.title}</div>

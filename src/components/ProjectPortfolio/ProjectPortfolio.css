@@ -3,5 +3,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    padding: 0 20px;
     overflow: hidden;
+}
+
+@media only screen and (min-width: 770px) {
+    .projects-container {
+        padding: 0;
+    }
 }
