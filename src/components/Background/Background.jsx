@@ -47,7 +47,7 @@ const Background = props => {
                     ${190},
                     ${220*(0.5 + Math.sin( 3*a + Math.PI*r )/2)},
                     ${190},
-                    ${(r - 0.5)/layers})`;
+                    ${0.25*(r - 0.5)/layers})`;
                 
                 ctx.beginPath();
                 
