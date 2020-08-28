@@ -1,0 +1,38 @@
+.profile {
+    position: relative;
+    margin: 60px auto 0 auto;
+    width: 100%;
+}
+
+.profile-photo {
+    position: absolute;
+    left: 20px;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    border: 4px solid #CCC;
+}
+
+.profile-wrapper {
+    margin-top: 20vw;
+    padding: 12vw 20px 10px 20px;
+    text-align: left;
+    background-color: mintcream;
+    border-top: 4px solid #CCC;
+    border-bottom: 4px solid #CCC;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.profile-pronouns {
+    font-size: 1rem;
+    color: #666;
+}
+
+.profile-title {
+    font-size: 1rem;
+    /* font-weight: bold; */
+}
