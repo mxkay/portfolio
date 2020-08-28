@@ -49,13 +49,13 @@
     
     .profile-wrapper {
         display: grid;
-        grid-template-rows: auto auto;
+        grid-template-rows: fit-content(300px) 1fr;
     }
 
     .profile {
         position: relative;
         grid-row: 1;
-        padding: 20px;
+        padding: 0 40px;
         text-align: center;
     }
     
@@ -63,10 +63,9 @@
         position: relative;
         left: unset;
         top: unset;
-        width: 80%;
-        max-width: 200px;
+        width: 100%;
         height: auto;
-        margin: 0 auto;
+        margin: 20px auto;
         border-radius: 50%;
         border: 4px solid #CCC;
     }
