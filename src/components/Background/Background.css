@@ -12,8 +12,8 @@
     width: 100%;
     height: 100%;
     z-index: -99;
-    /* background-color: mintcream; */
     background-color: slateblue;
+    background: radial-gradient(ellipse at center, blueviolet 0%, slateblue 100%);
 }
 
 .content {
