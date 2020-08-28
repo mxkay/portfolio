@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationContext from "./hooks/NavigationContext";
 
 import Background from "./components/Background/Background";
-import Header from "./components/Header/Header";
+import Layout from "./components/Layout/Layout";
+import Profile from "./components/Profile/Profile";
 import Body from "./components/Body/Body";
 import Nav from "./components/Nav/Nav";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
@@ -23,18 +24,20 @@ function App() {
           setCurrentPage
       }}>
         <Background>
-          <Header />
-          <Body nav={<Nav/>}>
-            {navigation.page === "projects" ?
-              <ProjectPortfolio />
-            :navigation.page === "about" ?
-              <></>
-            :navigation.page === "contact" ?
-              <></>
-            :
-              <></>
-            }
-          </Body>
+          <Layout>
+            <Profile />
+            <Body nav={<Nav/>}>
+              {navigation.page === "projects" ?
+                <ProjectPortfolio />
+              :navigation.page === "about" ?
+                <></>
+              :navigation.page === "contact" ?
+                <></>
+              :
+                <></>
+              }
+            </Body>
+          </Layout>
         </Background>
       </NavigationContext.Provider>
     </div>
