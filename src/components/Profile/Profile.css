@@ -8,11 +8,9 @@
 .profile {
     position: relative;
     grid-row: 2;
-    width: 100%;
-    height: 100%;
     padding: 30px 20px 10px 20px;
     text-align: left;
-    background-color: mintcream;
+    background-color: #f5fffa;
     border-top: 4px solid #CCC;
     border-bottom: 4px solid #CCC;
 }
@@ -57,8 +55,6 @@
     .profile {
         position: relative;
         grid-row: 1;
-        width: 100%;
-        height: 100%;
         padding: 20px;
         text-align: center;
     }
@@ -67,7 +63,8 @@
         position: relative;
         left: unset;
         top: unset;
-        width: 90%;
+        width: 80%;
+        max-width: 200px;
         height: auto;
         margin: 0 auto;
         border-radius: 50%;
