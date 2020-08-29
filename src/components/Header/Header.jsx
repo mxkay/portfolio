@@ -1,13 +1,11 @@
 import React from "react";
 import "./Header.css";
 
-import ProfilePhoto from "../ProfilePhoto/ProfilePhoto";
-import Ribbon from "../Ribbon/Ribbon";
+import Nav from "../Nav/Nav";
 
 const Header = () => 
     <div className="header">
-        <ProfilePhoto />
-        <Ribbon />
+        <Nav />
     </div>;
 
 export default Header;
