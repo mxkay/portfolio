@@ -1,17 +1,18 @@
 .layout {
     display: grid;
-    grid-template-rows: 250px auto;
+    grid-template-rows: 50px 1fr;
     width: 100%;
     max-width: 1400px;
     height: 100%;
     margin: 0 auto;
+    overflow: visible;
 }
 
 @media only screen and (min-width: 770px) {
     .layout {
         gap: 20px;
         padding: 20px;
-        grid-template-rows: auto;
-        grid-template-columns: 30% auto;
+        grid-template-rows: 100px auto;
+        grid-template-columns: 30% 1fr;
     }
 }
