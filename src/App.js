@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import useWindowDimensions from "./hooks/useWindowDimensions";
 import NavigationContext from "./hooks/NavigationContext";
 
 import Background from "./components/Background/Background";
@@ -10,7 +11,10 @@ import Header from "./components/Header/Header";
 import Profile from "./components/Profile/Profile";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 
+
 function App() {
+  const { height, width } = useWindowDimensions();
+
   const [navigation, updateNavigation] = useState({ page: "projects" });
   const setCurrentPage = (value) => {
     updateNavigation({ ...navigation, page: value });
@@ -19,7 +23,7 @@ function App() {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const onScrollFrame = (event) => {
     if(event) {
-      setIsHeaderSticky(event.scrollTop >= 64);
+      setIsHeaderSticky(event.scrollTop >= (width > 770 ? 64 : 240));
     }
   }
 
@@ -31,8 +35,8 @@ function App() {
       }}>
         <Background>
           <Layout onScrollFrame={onScrollFrame} >
-            <Header isSticky={isHeaderSticky} />
             <Profile />
+            <Header isSticky={isHeaderSticky} />
             {navigation.page === "projects" ?
               <ProjectPortfolio />
             :navigation.page === "about" ?

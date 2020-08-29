@@ -1,16 +1,30 @@
 .projects-container {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0 20px;
     overflow: visible;
+}
+
+@media only screen and (min-width: 550px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (min-width: 770px) {
     .projects-container {
-        padding: 0;
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
     }
 }
