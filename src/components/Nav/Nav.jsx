@@ -22,7 +22,7 @@ const Nav = () => {
             >
                 <ToggleButton
                     name="nav"
-                    variant="secondary"
+                    variant="nav"
                     style={navigation.page === "projects" ? styles.buttonSelected : styles.button}
                     value="projects"
                     onChange={handleChange}
@@ -30,7 +30,7 @@ const Nav = () => {
                 </ToggleButton>
                 <ToggleButton
                     name="nav"
-                    variant="secondary"
+                    variant="nav"
                     style={navigation.page === "about" ? styles.buttonSelected : styles.button}
                     value="about"
                     onChange={handleChange}
@@ -38,7 +38,7 @@ const Nav = () => {
                 </ToggleButton>
                 <ToggleButton
                     name="nav"
-                    variant="secondary"
+                    variant="nav"
                     style={navigation.page === "contact" ? styles.buttonSelected : styles.button}
                     value="contact"
                     onChange={handleChange}
@@ -51,16 +51,14 @@ const Nav = () => {
 
 const styles = {
     buttonGroup: {
-        width: "100%"
+        width: "100%",
     },
     button: {
         backgroundColor: "#777",
-        borderWidth: 0,
     },
     buttonSelected: {
         backgroundColor: "#CCC",
         color: "black",
-        borderWidth: 0,
     }
 }
 
