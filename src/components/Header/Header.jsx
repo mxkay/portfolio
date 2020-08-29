@@ -3,8 +3,8 @@ import "./Header.css";
 
 import Nav from "../Nav/Nav";
 
-const Header = () => 
-    <div className="header">
+const Header = ({ isSticky }) => 
+    <div className={`header ${isSticky ? "sticky" : ""}`}>
         <Nav />
     </div>;
 
