@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import NavigationContext from "../../hooks/NavigationContext";
 import { findByLabelText } from "@testing-library/react";
+import "./Nav.css";
 
 const Nav = () => {
     const { navigation, setCurrentPage } = useContext(NavigationContext);
@@ -12,7 +13,7 @@ const Nav = () => {
     }
 
     return (
-        <div className="nav-wrapper">
+        <div className="nav">
             <ToggleButtonGroup
                 name="nav"
                 aria-label="Navigation"
