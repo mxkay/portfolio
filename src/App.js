@@ -21,9 +21,10 @@ function App() {
   }
 
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-  const onScrollFrame = (event) => {
-    if(event) {
-      setIsHeaderSticky(event.scrollTop >= (width > 770 ? 64 : 240));
+  const headerRef = useRef(null);
+  const onScrollFrame = () => {
+    if(headerRef) {
+      setIsHeaderSticky(headerRef.current.getBoundingClientRect().top <= 0);
     }
   }
 
@@ -36,7 +37,7 @@ function App() {
         <Background>
           <Layout onScrollFrame={onScrollFrame} >
             <Profile />
-            <Header isSticky={isHeaderSticky} />
+            <Header isSticky={isHeaderSticky} forwardedRef={headerRef} />
             {navigation.page === "projects" ?
               <ProjectPortfolio />
             :navigation.page === "about" ?
