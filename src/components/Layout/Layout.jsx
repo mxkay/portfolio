@@ -2,10 +2,10 @@ import React from "react";
 import Scrollbars from "react-custom-scrollbars";
 import "./Layout.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ onScrollFrame, children }) => {
     return (
-        <Scrollbars>
-            <div className="layout">
+        <Scrollbars onScrollFrame={onScrollFrame} >
+            <div className="layout" >
                 {children}
             </div>
         </Scrollbars>
