@@ -6,8 +6,8 @@ import NavigationContext from "./hooks/NavigationContext";
 
 import Background from "./components/Background/Background";
 import Layout from "./components/Layout/Layout";
+import Header from "./components/Header/Header";
 import Profile from "./components/Profile/Profile";
-import Body from "./components/Body/Body";
 import Nav from "./components/Nav/Nav";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 
@@ -25,18 +25,17 @@ function App() {
       }}>
         <Background>
           <Layout>
-            <Profile />
-            <Body nav={<Nav/>}>
-              {navigation.page === "projects" ?
-                <ProjectPortfolio />
-              :navigation.page === "about" ?
-                <></>
-              :navigation.page === "contact" ?
-                <></>
-              :
-                <></>
-              }
-            </Body>
+            <Header />
+            <Profile/>
+            {navigation.page === "projects" ?
+              <ProjectPortfolio />
+            :navigation.page === "about" ?
+              <></>
+            :navigation.page === "contact" ?
+              <></>
+            :
+              <></>
+            }
           </Layout>
         </Background>
       </NavigationContext.Provider>
