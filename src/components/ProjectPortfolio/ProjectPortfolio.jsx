@@ -9,8 +9,8 @@ const ProjectPortfolio = () => {
 
     // ON MOUNT
     useEffect( () => {
-        // const sheetURL = 'https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/edit#gid=677653555';
-        const sheetAsJSON = 'https://spreadsheets.google.com/feeds/list/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/1/public/full?alt=json'
+        // const sheetURL = "https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/edit#gid=677653555";
+        const sheetAsJSON = "https://spreadsheets.google.com/feeds/list/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/1/public/full?alt=json"
 
         // FETCH project data
         axios(sheetAsJSON)
@@ -22,11 +22,14 @@ const ProjectPortfolio = () => {
                     title: project.gsx$title.$t,
                     image: project.gsx$image.$t,
                     description: project.gsx$description.$t,
-                    url: project.gsx$url.$t
+                    url: project.gsx$url.$t,
+                    repository: project.gsx$repository.$t,
+                    languages: project.gsx$languages.$t.replace(/ /g,"").split(","),
+                    libraries: project.gsx$libraries.$t.replace(/ /g,"").split(","),
                 }
             }));
         })
-        .catch( err => console.log('error loading ajax'));
+        .catch( err => console.log("error loading ajax"));
     },[]);
 
     return (
