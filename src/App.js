@@ -7,7 +7,7 @@ import NavigationContext from "./hooks/NavigationContext";
 
 import Background from "./components/Background/Background";
 import Layout from "./components/Layout/Layout";
-import Header from "./components/Header/Header";
+import StickyHeader from "./components/StickyHeader/StickyHeader";
 import Profile from "./components/Profile/Profile";
 import Body from "./components/Body/Body";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
@@ -21,11 +21,11 @@ function App() {
     updateNavigation({ ...navigation, page: value });
   }
 
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-  const headerRef = useRef(null);
+  const [isStickyHeaderSticky, setIsStickyHeaderSticky] = useState(false);
+  const stickyHeaderRef = useRef(null);
   const onScrollFrame = () => {
-    if(headerRef) {
-      setIsHeaderSticky(headerRef.current.getBoundingClientRect().top <= 0);
+    if(stickyHeaderRef) {
+      setIsStickyHeaderSticky(stickyHeaderRef.current.getBoundingClientRect().top <= 0);
     }
   }
 
@@ -38,7 +38,7 @@ function App() {
         <Background>
           <Layout onScrollFrame={onScrollFrame} >
             <Profile />
-            <Header isSticky={isHeaderSticky} forwardedRef={headerRef} />
+            <StickyHeader isSticky={isStickyHeaderSticky} forwardedRef={stickyHeaderRef} />
             <Body>
               {navigation.page === "projects" ?
                 <ProjectPortfolio />
