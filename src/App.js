@@ -9,6 +9,7 @@ import Background from "./components/Background/Background";
 import Layout from "./components/Layout/Layout";
 import Header from "./components/Header/Header";
 import Profile from "./components/Profile/Profile";
+import Body from "./components/Body/Body";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 
 
@@ -38,15 +39,17 @@ function App() {
           <Layout onScrollFrame={onScrollFrame} >
             <Profile />
             <Header isSticky={isHeaderSticky} forwardedRef={headerRef} />
-            {navigation.page === "projects" ?
-              <ProjectPortfolio />
-            :navigation.page === "about" ?
-              <></>
-            :navigation.page === "contact" ?
-              <></>
-            :
-              <></>
-            }
+            <Body>
+              {navigation.page === "projects" ?
+                <ProjectPortfolio />
+              :navigation.page === "about" ?
+                <></>
+              :navigation.page === "contact" ?
+                <></>
+              :
+                <></>
+              }
+            </Body>
           </Layout>
         </Background>
       </NavigationContext.Provider>
