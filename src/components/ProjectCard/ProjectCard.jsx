@@ -14,32 +14,29 @@ const ProjectCard = ({
     repository,
     languages,
     libraries
-}) => {
-    return (
-        <Card className="project-card">
-            <div className="project-card-image-clipzone" >
-                <Card.Img variant="top" src={image} className="project-card-image" />
-            </div>
-            <Card.Body className="project-card-body">
-                <Card.Title style={{ fontWeight: "bold" }}>{title}</Card.Title>
-                <Card.Text style={{ textAlign: "left", flexGrow: 1 }}>{description}</Card.Text>
-                <Card.Body className="project-card-button-container">
-                    {repository ?
-                        <Button variant="secondary" href={repository}>
-                            <GoRepo /> repo
-                        </Button>
-                    : <></> }
-                    {url ?
-                        <Button variant="secondary" href={url}>
-                            <FaRegEye /> demo
-                        </Button>
-                    : <></> }
-                </Card.Body>
-                <DevToolList toolNames={languages} />
-                <DevToolList toolNames={libraries} />
+}) =>
+    <Card className="project-card">
+        <div className="project-card-image-clipzone" >
+            <Card.Img className="project-card-image" variant="top" src={image} />
+        </div>
+        <Card.Body className="project-card-body">
+            <Card.Title className="project-card-title">{title}</Card.Title>
+            <Card.Text className="project-card-description">{description}</Card.Text>
+            <Card.Body className="project-card-button-container">
+                {repository ?
+                    <Button variant="secondary" href={repository}>
+                        <GoRepo /> repo
+                    </Button>
+                : <></> }
+                {url ?
+                    <Button variant="secondary" href={url}>
+                        <FaRegEye /> demo
+                    </Button>
+                : <></> }
             </Card.Body>
-        </Card>
-    )
-}
+            <DevToolList toolNames={languages} />
+            <DevToolList toolNames={libraries} />
+        </Card.Body>
+    </Card>;
 
 export default ProjectCard;

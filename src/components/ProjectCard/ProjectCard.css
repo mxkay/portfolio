@@ -7,6 +7,16 @@
     color: white;
 }
 
+.project-card-title {
+    font-weight: bold;
+}
+
+.project-card-description {
+    flex-grow: 1;
+    text-align: left;
+    padding: 5px;
+}
+
 .project-card-body {
     display: flex;
     flex-direction: column;
