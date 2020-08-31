@@ -7,7 +7,7 @@ const DevToolIcon = ({ icon, color }) =>
         <IconContext.Provider value={
             {
                 color: color,
-                size: "1.5em",
+                size: "1.8em",
                 className: "global-class-name"
             }
         }>
