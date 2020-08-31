@@ -1,0 +1,13 @@
+.dev-tool-wrapper {
+    font-size: 0.8em;
+    line-height: 2em;
+}
+
+.dev-tool-icon {
+    display: inline;
+    margin: 5px;
+}
+
+.dev-tool-name {
+    display: inline;
+}
