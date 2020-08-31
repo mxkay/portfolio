@@ -1,17 +1,27 @@
 import React from "react";
 import { Button, Card, Figure } from "react-bootstrap";
 import "./ProjectCard.css";
+import LanguageList from "../LanguageList/LanguageList";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({
+    title,
+    image,
+    description,
+    url,
+    repository,
+    languages,
+    libraries
+}) => {
     return (
         <Card className="project-card">
             <div className="project-card-image-clipzone" >
-                <Card.Img variant="top" src={project.image} className="project-card-image" />
+                <Card.Img variant="top" src={image} className="project-card-image" />
             </div>
             <Card.Body>
-                <Card.Title>{project.title}</Card.Title>
-                <Card.Text>{project.description}</Card.Text>
-                {project.url ? <Button variant="primary" href={project.url}>live demo</Button> : <></> }
+                <Card.Title>{title}</Card.Title>
+                <LanguageList languages={languages} />
+                <Card.Text>{description}</Card.Text>
+                {url ? <Button variant="primary" href={url}>live demo</Button> : <></> }
             </Card.Body>
         </Card>
     )
