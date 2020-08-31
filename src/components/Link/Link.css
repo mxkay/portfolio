@@ -1,0 +1,21 @@
+.link-button {
+    font-size: 1em;
+    font-size: 1em;
+    width: 100%;
+    border-width: 0;
+    border-radius: 1.5em;
+    display: flex;
+    justify-content: left;
+    margin: 10px 0;
+}
+
+.link-icon {
+    margin: auto 0;
+}
+
+.link-label {
+    margin: auto 0;
+    flex-grow: 1;
+    justify-content: center;
+    color: #24292E;
+}

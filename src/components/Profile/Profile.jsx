@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
 import ProfilePresenter from "./Profile.presenter";
 
 const Profile = () => {
-    const { height, width } = useWindowDimensions();
 
     const [profileData, updateProfileData] = useState({
         name: "",
