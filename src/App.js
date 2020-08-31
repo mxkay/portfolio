@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import useWindowDimensions from "./hooks/useWindowDimensions";
 import NavigationContext from "./hooks/NavigationContext";
 
 import Background from "./components/Background/Background";
 import Layout from "./components/Layout/Layout";
+import StickyHeader from "./components/StickyHeader/StickyHeader";
 import Profile from "./components/Profile/Profile";
 import Body from "./components/Body/Body";
-import Nav from "./components/Nav/Nav";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 
+
 function App() {
+  const { height, width } = useWindowDimensions();
+
   const [navigation, updateNavigation] = useState({ page: "projects" });
   const setCurrentPage = (value) => {
     updateNavigation({ ...navigation, page: value });
+  }
+
+  const [isStickyHeaderSticky, setIsStickyHeaderSticky] = useState(false);
+  const stickyHeaderRef = useRef(null);
+  const onScrollFrame = () => {
+    if(stickyHeaderRef) {
+      setIsStickyHeaderSticky(stickyHeaderRef.current.getBoundingClientRect().top <= 0);
+    }
   }
 
   return (
@@ -24,9 +36,10 @@ function App() {
           setCurrentPage
       }}>
         <Background>
-          <Layout>
+          <Layout onScrollFrame={onScrollFrame} >
             <Profile />
-            <Body nav={<Nav/>}>
+            <StickyHeader isSticky={isStickyHeaderSticky} forwardedRef={stickyHeaderRef} />
+            <Body>
               {navigation.page === "projects" ?
                 <ProjectPortfolio />
               :navigation.page === "about" ?

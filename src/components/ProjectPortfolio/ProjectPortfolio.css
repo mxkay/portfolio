@@ -1,14 +1,26 @@
 .projects-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0 20px;
-    overflow: hidden;
+    overflow: visible;
+}
+
+@media only screen and (min-width: 550px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (min-width: 770px) {
     .projects-container {
-        padding: 0;
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
     }
 }

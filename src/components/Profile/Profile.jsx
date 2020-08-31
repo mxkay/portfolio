@@ -38,7 +38,9 @@ const Profile = () => {
     return (
         <div className="profile-wrapper">
             <div className="profile">
-                <img className="profile-photo" src={profileData.photo} />
+                <div className="profile-photo-wrapper">
+                    <img className="profile-photo" src={profileData.photo} />
+                </div>
                 <div className="profile-name">{profileData.name}</div>
                 <div className="profile-pronouns">{profileData.pronouns}</div>
                 <div className="profile-title">{profileData.title}</div>
