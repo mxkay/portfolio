@@ -18,7 +18,7 @@ const LanguageContainer = ({ language }) =>
         : language === "Ruby" ?
             <LanguageIcon icon={<DiRuby />} color="#000"/>
         :
-            <></>
+            <LanguageIcon icon={<FaCircle />} color="#000"/>
         }
         {language}
     </div>
