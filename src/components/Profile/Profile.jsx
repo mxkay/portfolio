@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import "./Profile.css";
+import ProfilePresenter from "./Profile.presenter";
 
 const Profile = () => {
     const { height, width } = useWindowDimensions();
@@ -35,18 +35,7 @@ const Profile = () => {
         .catch( err => console.log('error loading ajax'));
     },[]);
 
-    return (
-        <div className="profile-wrapper">
-            <div className="profile">
-                <div className="profile-photo-wrapper">
-                    <img className="profile-photo" src={profileData.photo} />
-                </div>
-                <div className="profile-name">{profileData.name}</div>
-                <div className="profile-pronouns">{profileData.pronouns}</div>
-                <div className="profile-title">{profileData.title}</div>
-            </div>
-        </div>
-    );
+    return <ProfilePresenter {...profileData} />;
 }
 
 export default Profile;
