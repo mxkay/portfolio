@@ -1,6 +1,8 @@
 .project-card {
     width: 100%;
     border-radius: 10px;
+    background-color: #24292E;
+    color: white;
 }
 
 .project-card-image-clipzone {
