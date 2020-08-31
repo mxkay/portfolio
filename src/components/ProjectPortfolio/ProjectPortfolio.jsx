@@ -34,7 +34,7 @@ const ProjectPortfolio = () => {
 
     return (
         <div className="projects-container">
-            {projects[0] ? projects.map( project => <ProjectCard project={project} /> ) : <></>}
+            {projects[0] ? projects.map( project => <ProjectCard {...project} /> ) : <></>}
         </div>
     );
 }
