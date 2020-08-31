@@ -22,7 +22,7 @@ const Profile = () => {
         axios(sheetAsJSON)
         // STORE project data to state
         .then( response => {
-            console.log("response.data", response.data);
+            // console.log("response.data", response.data);
             updateProfileData( 
                 {
                     name: response.data.feed.entry[0].gsx$name.$t,
