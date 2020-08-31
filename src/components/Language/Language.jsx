@@ -1,5 +1,6 @@
 import React from "react";
 import LanguageIcon from "./LanguageIcon";
+import "./Language.css";
 
 import { DiJsBadge } from "react-icons/di";
 import { DiHtml5 } from "react-icons/di";
@@ -20,7 +21,9 @@ const LanguageContainer = ({ language }) =>
         :
             <LanguageIcon icon={<FaCircle />} color="#000"/>
         }
-        {language}
+        <div className="language-name">
+            {language}
+        </div>
     </div>
 
 export default LanguageContainer;

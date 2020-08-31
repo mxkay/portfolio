@@ -1,0 +1,13 @@
+.language-wrapper {
+    position: relative;
+    font-weight: bold;
+}
+
+.language-icon {
+    display: inline;
+    margin: 5px;
+}
+
+.language-name {
+    display: inline;
+}
