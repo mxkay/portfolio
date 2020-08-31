@@ -19,9 +19,11 @@ const ProjectCard = ({
             </div>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <LanguageList languages={languages} />
                 <Card.Text>{description}</Card.Text>
-                {url ? <Button variant="primary" href={url}>live demo</Button> : <></> }
+                <Card.Body>
+                    {url ? <Button variant="primary" href={url}>live demo</Button> : <></> }
+                </Card.Body>
+                <LanguageList languages={languages} />
             </Card.Body>
         </Card>
     )
