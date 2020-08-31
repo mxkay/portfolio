@@ -5,6 +5,11 @@
     color: white;
 }
 
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+}
+
 .project-card-image-clipzone {
     position: relative;
     width: 100%;
@@ -16,4 +21,16 @@
 .project-card-image {
     min-width: 100%;
     min-height: 100%;
+}
+
+.project-card-buttons {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    flex-grow: 0;
+    ;
+}
+
+.project-card-buttons > * {
+    flex-grow: 1;
 }

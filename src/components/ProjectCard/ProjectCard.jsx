@@ -1,7 +1,10 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import "./ProjectCard.css";
 import DevToolList from "../DevToolList/DevToolList";
+import { GoRepo } from "react-icons/go";
+import { FaRegEye } from "react-icons/fa";
+
+import "./ProjectCard.css";
 
 const ProjectCard = ({
     title,
@@ -17,11 +20,20 @@ const ProjectCard = ({
             <div className="project-card-image-clipzone" >
                 <Card.Img variant="top" src={image} className="project-card-image" />
             </div>
-            <Card.Body>
+            <Card.Body className="project-card-body">
                 <Card.Title style={{ fontWeight: "bold" }}>{title}</Card.Title>
-                <Card.Text style={{ textAlign: "left" }}>{description}</Card.Text>
-                <Card.Body>
-                    {url ? <Button variant="primary" href={url}>live demo</Button> : <></> }
+                <Card.Text style={{ textAlign: "left", flexGrow: 1 }}>{description}</Card.Text>
+                <Card.Body className="project-card-buttons">
+                    {repository ?
+                        <Button variant="primary" href={repository}>
+                            <GoRepo /> repo
+                        </Button>
+                    : <></> }
+                    {url ?
+                        <Button variant="primary" href={url}>
+                            <FaRegEye /> demo
+                        </Button>
+                    : <></> }
                 </Card.Body>
                 <DevToolList toolNames={languages} />
             </Card.Body>
