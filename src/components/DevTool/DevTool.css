@@ -1,13 +1,13 @@
-.language-wrapper {
+.dev-tool-wrapper {
     position: relative;
     font-weight: bold;
 }
 
-.language-icon {
+.dev-tool-icon {
     display: inline;
     margin: 5px;
 }
 
-.language-name {
+.dev-tool-name {
     display: inline;
 }

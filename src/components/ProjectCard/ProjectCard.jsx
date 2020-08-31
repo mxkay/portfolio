@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Card, Figure } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import "./ProjectCard.css";
-import LanguageList from "../LanguageList/LanguageList";
+import DevToolList from "../DevToolList/DevToolList";
 
 const ProjectCard = ({
     title,
@@ -23,7 +23,7 @@ const ProjectCard = ({
                 <Card.Body>
                     {url ? <Button variant="primary" href={url}>live demo</Button> : <></> }
                 </Card.Body>
-                <LanguageList languages={languages} />
+                <DevToolList toolNames={languages} />
             </Card.Body>
         </Card>
     )

@@ -2,8 +2,8 @@ import React from "react";
 
 import { IconContext } from "react-icons";
 
-const LanguageIcon = ({ icon, color }) =>
-    <div className="language-icon">
+const DevToolIcon = ({ icon, color }) =>
+    <div className="dev-tool-icon">
         <IconContext.Provider value={
             {
                 color: color,
@@ -15,4 +15,4 @@ const LanguageIcon = ({ icon, color }) =>
         </IconContext.Provider>
     </div>
 
-export default LanguageIcon;
+export default DevToolIcon;
