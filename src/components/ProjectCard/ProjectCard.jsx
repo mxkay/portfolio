@@ -36,6 +36,7 @@ const ProjectCard = ({
                     : <></> }
                 </Card.Body>
                 <DevToolList toolNames={languages} />
+                <DevToolList toolNames={libraries} />
             </Card.Body>
         </Card>
     )
