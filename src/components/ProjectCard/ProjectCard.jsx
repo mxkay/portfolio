@@ -23,14 +23,14 @@ const ProjectCard = ({
             <Card.Body className="project-card-body">
                 <Card.Title style={{ fontWeight: "bold" }}>{title}</Card.Title>
                 <Card.Text style={{ textAlign: "left", flexGrow: 1 }}>{description}</Card.Text>
-                <Card.Body className="project-card-buttons">
+                <Card.Body className="project-card-button-container">
                     {repository ?
-                        <Button variant="primary" href={repository}>
+                        <Button variant="secondary" href={repository}>
                             <GoRepo /> repo
                         </Button>
                     : <></> }
                     {url ?
-                        <Button variant="primary" href={url}>
+                        <Button variant="secondary" href={url}>
                             <FaRegEye /> demo
                         </Button>
                     : <></> }
