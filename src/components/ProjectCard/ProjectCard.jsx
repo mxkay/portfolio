@@ -18,8 +18,8 @@ const ProjectCard = ({
                 <Card.Img variant="top" src={image} className="project-card-image" />
             </div>
             <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{description}</Card.Text>
+                <Card.Title style={{ fontWeight: "bold" }}>{title}</Card.Title>
+                <Card.Text style={{ textAlign: "left" }}>{description}</Card.Text>
                 <Card.Body>
                     {url ? <Button variant="primary" href={url}>live demo</Button> : <></> }
                 </Card.Body>
