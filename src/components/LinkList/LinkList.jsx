@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "../Link/Link";
 
+import "./LinkList.css";
+
 const LinkList = ({ links }) =>
     <div className="link-list">
         { links && links[0] ?
