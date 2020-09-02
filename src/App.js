@@ -8,7 +8,7 @@ import NavigationContext from "./hooks/NavigationContext";
 import Background from "./components/Background/Background";
 import Layout from "./components/Layout/Layout";
 import StickyHeader from "./components/StickyHeader/StickyHeader";
-import Profile from "./components/Profile/Profile";
+import { ProfileContainer as Profile } from "./components/Profile/Profile.container";
 import Body from "./components/Body/Body";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 

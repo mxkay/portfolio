@@ -1,4 +1,4 @@
-.profile-wrapper {
+.profile-layout {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     display: grid;
@@ -7,14 +7,22 @@
     height: 100%;
 }
 
-.profile {
+.profile-wrapper {
     position: relative;
     grid-row: 2;
-    padding: 30px 20px 10px 20px;
+    padding: 20px;
     text-align: left;
-    background-color: #f5fffa;
-    border-top: 4px solid #CCC;
-    border-bottom: 4px solid #CCC;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-color: #1B1D24;
+    background-color: #24292E;
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.profile {
+    padding: 20px 0 0 0;
 }
 
 .profile-photo {
@@ -23,8 +31,6 @@
     top: -100px;
     width: 120px;
     height: auto;
-    border-radius: 50%;
-    border: 4px solid #CCC;
 }
 
 .profile-name {
@@ -49,24 +55,29 @@
 
 @media only screen and (min-width: 770px) {
     
-    .profile-wrapper {
+    .profile-layout {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         grid-template-rows: fit-content(300px) 1fr;
     }
-
-    .profile {
-        position: relative;
+    
+    .profile-wrapper {
+        position: fixed;
+        width: calc( 30% - 15px );
         grid-row: 1;
-        padding: 0 20px 0 20px;
+        padding: 0 50px 10px 50px;
         text-align: center;
-        border: 0;
+        border: 4px solid #1B1D24;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .profile-photo-wrapper {
         position: relative;
-        width: 80%;
-        padding-top: calc(80% - 100px);
+        width: 100%;
+        padding-top: calc(100% - 100px);
         margin: 0 auto 20px auto;
     }
     
@@ -76,9 +87,6 @@
         bottom: 0;
         width: 100%;
         height: auto;
-        margin: 0;
-        border-radius: 50%;
-        border: 4px solid #CCC;
     }
 
     .profile-name {
@@ -92,5 +100,12 @@
     
     .profile-title {
         font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1420px) {
+    .profile-wrapper {
+        width: 405px;
+        padding: 0 50px 10px 50px;
     }
 }
