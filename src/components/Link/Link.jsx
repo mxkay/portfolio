@@ -11,17 +11,15 @@ import "./Link.css";
 
 const Link = ({ label, url }) =>
     <Button
-        className="link-button"
+        className={`link-button ${label.toLowerCase()}`}
         variant="secondary"
         href={url}
-        style={
+        activeStyle={
             {
-                backgroundColor:
-                    label ==="GitHub" ? "#44BA4E" :
-                    label === "LinkedIn" ? "#3877B5" :
-                    "#000"
+                backgroundColor: "blue",
             }
-    }>
+        }
+    >
         { label === "GitHub" ?
             <LinkIcon icon={<GitHubIcon />} color="#24292E"/>
         : label === "LinkedIn" ?

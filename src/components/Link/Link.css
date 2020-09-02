@@ -8,6 +8,18 @@
     padding: 0;
 }
 
+.link-button.github {
+    background-color: #44BA4E;
+}
+
+.link-button.linkedin {
+    background-color: #3877B5;
+}
+
+.link-button:hover, .link-button:focus, .link-button:active, .link-button.active, .open>.dropdown-toggle.link-button {
+    background-color: #DDD;
+}
+
 .link-icon {
     margin: 50% 0 0 50%;
     transform: translate( -50%, -50% );
