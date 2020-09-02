@@ -29,9 +29,6 @@ const Link = ({ label, url }) =>
         : // default
             <LinkIcon icon={<CircleIcon />} color="#24292E"/>
         }
-        <div className="link-label">
-            {label}
-        </div>
     </Button>;
 
 export default Link;
