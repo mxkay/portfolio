@@ -54,11 +54,12 @@
         grid-row: 2 / 3;
         grid-template-rows: fit-content(300px) 1fr;
     }
-
+    
     .profile {
-        position: relative;
+        position: fixed;
+        width: calc( 30% - 15px );
         grid-row: 1;
-        padding: 0 15% 10px 15%;
+        padding: 0 50px 10px 50px;
         text-align: center;
         border: 4px solid #1B1D24;
         border-radius: 10px;
@@ -90,5 +91,12 @@
     
     .profile-title {
         font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1420px) {
+    .profile {
+        width: 405px;
+        padding: 0 50px 10px 50px;
     }
 }
