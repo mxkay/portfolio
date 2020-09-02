@@ -1,6 +1,6 @@
 import React from "react";
 import ProfilePhoto from "../ProfilePhoto/ProfilePhoto";
-import LinkList from "../LinkList/LinkList";
+import LinkList from "../LinkList/LinkList.container";
 
 import "./Profile.css";
 
