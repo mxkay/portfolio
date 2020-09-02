@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LinkList from "./LinkList";
 
-const LinkList = () => {
+const LinkListContainer = () => {
 
     const [links, updateLinks] = useState({
         label: "",
@@ -32,4 +32,4 @@ const LinkList = () => {
     return <LinkList links={links} />
 }
 
-export default LinkList;
+export { LinkListContainer };
