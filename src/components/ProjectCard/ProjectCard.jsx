@@ -12,6 +12,8 @@ const ProjectCard = ({
     description,
     url,
     repository,
+    frontend,
+    backend,
     languages,
     libraries
 }) =>
@@ -23,9 +25,19 @@ const ProjectCard = ({
             <Card.Title className="project-card-title">{title}</Card.Title>
             <Card.Text className="project-card-description">{description}</Card.Text>
             <Card.Body className="project-card-button-container">
-                {repository ?
+            {repository ?
                     <Button variant="secondary" href={repository}>
                         <RepoIcon /> repo
+                    </Button>
+                : <></> }
+                {frontend ?
+                    <Button variant="secondary" href={frontend}>
+                        <RepoIcon /> frontend
+                    </Button>
+                : <></> }
+                {backend ?
+                    <Button variant="secondary" href={backend}>
+                        <RepoIcon /> backend
                     </Button>
                 : <></> }
                 {url ?

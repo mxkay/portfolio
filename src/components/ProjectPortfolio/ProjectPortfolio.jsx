@@ -24,6 +24,8 @@ const ProjectPortfolio = () => {
                     description: project.gsx$description.$t,
                     url: project.gsx$url.$t,
                     repository: project.gsx$repository.$t,
+                    frontend: project.gsx$frontend.$t,
+                    backend: project.gsx$backend.$t,
                     languages: project.gsx$languages.$t.split(","),
                     libraries: project.gsx$libraries.$t.split(","),
                 }
