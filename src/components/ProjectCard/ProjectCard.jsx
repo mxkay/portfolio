@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import DevToolList from "../DevToolList/DevToolList";
-import { GoRepo } from "react-icons/go";
-import { FaRegEye } from "react-icons/fa";
+import { GoRepo as RepoIcon } from "react-icons/go";
+import { FaRegEye as DemoIcon } from "react-icons/fa";
 
 import "./ProjectCard.css";
 
@@ -25,12 +25,12 @@ const ProjectCard = ({
             <Card.Body className="project-card-button-container">
                 {repository ?
                     <Button variant="secondary" href={repository}>
-                        <GoRepo /> repo
+                        <RepoIcon /> repo
                     </Button>
                 : <></> }
                 {url ?
                     <Button variant="secondary" href={url}>
-                        <FaRegEye /> demo
+                        <DemoIcon /> demo
                     </Button>
                 : <></> }
             </Card.Body>
