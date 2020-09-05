@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import DevToolList from "../DevToolList/DevToolList";
-import { GoRepo } from "react-icons/go";
-import { FaRegEye } from "react-icons/fa";
+import { GoRepo as RepoIcon } from "react-icons/go";
+import { FaRegEye as DemoIcon } from "react-icons/fa";
 
 import "./ProjectCard.css";
 
@@ -12,6 +12,8 @@ const ProjectCard = ({
     description,
     url,
     repository,
+    frontend,
+    backend,
     languages,
     libraries
 }) =>
@@ -23,14 +25,24 @@ const ProjectCard = ({
             <Card.Title className="project-card-title">{title}</Card.Title>
             <Card.Text className="project-card-description">{description}</Card.Text>
             <Card.Body className="project-card-button-container">
-                {repository ?
+            {repository ?
                     <Button variant="secondary" href={repository}>
-                        <GoRepo /> repo
+                        <RepoIcon /> repo
+                    </Button>
+                : <></> }
+                {frontend ?
+                    <Button variant="secondary" href={frontend}>
+                        <RepoIcon /> frontend
+                    </Button>
+                : <></> }
+                {backend ?
+                    <Button variant="secondary" href={backend}>
+                        <RepoIcon /> backend
                     </Button>
                 : <></> }
                 {url ?
                     <Button variant="secondary" href={url}>
-                        <FaRegEye /> demo
+                        <DemoIcon /> demo
                     </Button>
                 : <></> }
             </Card.Body>

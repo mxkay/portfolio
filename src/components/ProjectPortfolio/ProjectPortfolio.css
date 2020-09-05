@@ -19,7 +19,7 @@
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
     .projects-container {
         grid-template-columns: 1fr 1fr;
     }

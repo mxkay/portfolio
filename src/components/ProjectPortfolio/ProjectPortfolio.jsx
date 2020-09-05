@@ -24,8 +24,10 @@ const ProjectPortfolio = () => {
                     description: project.gsx$description.$t,
                     url: project.gsx$url.$t,
                     repository: project.gsx$repository.$t,
-                    languages: project.gsx$languages.$t.replace(/ /g,"").split(","),
-                    libraries: project.gsx$libraries.$t.replace(/ /g,"").split(","),
+                    frontend: project.gsx$frontend.$t,
+                    backend: project.gsx$backend.$t,
+                    languages: project.gsx$languages.$t.split(","),
+                    libraries: project.gsx$libraries.$t.split(","),
                 }
             }));
         })
