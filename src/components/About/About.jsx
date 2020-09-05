@@ -1,7 +1,8 @@
 import React from 'react'
+import "./About.css";
 
 const About = ({ bio }) => 
-    <div className="bio">
+    <div className="about-bio">
         {bio}
     </div>
 
