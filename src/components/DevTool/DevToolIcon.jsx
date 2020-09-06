@@ -2,12 +2,12 @@ import React from "react";
 
 import { IconContext } from "react-icons";
 
-const DevToolIcon = ({ icon, color }) =>
-    <div className="dev-tool-icon">
+const DevToolIcon = ({ icon, size = 1.8, color }) =>
+    <div className="dev-tool-icon" style={{ padding: (1.8 - size)/2 + "em" }}>
         <IconContext.Provider value={
             {
                 color: color,
-                size: "1.8em",
+                size: size + "em",
                 className: "global-class-name"
             }
         }>
