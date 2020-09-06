@@ -12,7 +12,7 @@ const LinkListContainer = () => {
     // ON MOUNT
     useEffect( () => {
         // const sheetURL = "https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/edit#gid=677653555";
-        const sheetAsJSON = "https://spreadsheets.google.com/feeds/list/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/3/public/full?alt=json"
+        const sheetAsJSON = "https://spreadsheets.google.com/feeds/list/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/4/public/full?alt=json"
 
         // FETCH link data
         axios(sheetAsJSON)
