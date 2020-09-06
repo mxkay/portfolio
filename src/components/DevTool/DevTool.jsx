@@ -41,7 +41,7 @@ const DevTool = ({ name }) =>
         : name === "Expo" ?
             <DevToolIcon icon={<ExpoIcon />} color="#020020"/>
         : // default
-            <DevToolIcon icon={<CircleIcon />} color="#000"/>
+            <DevToolIcon icon={<CircleIcon />} size={0.5} color="#777"/>
         }
         <div className="dev-tool-name">
             {name}
