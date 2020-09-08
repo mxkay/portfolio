@@ -30,6 +30,12 @@
     text-indent: 0;
 }
 
+.about-bio-text-block.h3 {
+    font-size: 1.2rem;
+    text-indent: 0;
+    color: #777;
+}
+
 .about-bio-text-block.devToolList {
     font-size: 2rem;
     text-indent: 0;
