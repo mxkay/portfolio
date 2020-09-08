@@ -24,7 +24,7 @@ const ContactContainer = () => {
                 {
                     name: response.data.feed.entry[0].gsx$name.$t,
                     pronouns: response.data.feed.entry[0].gsx$pronouns.$t,
-                    email: response.data.feed.entry[0].gsx$title.$t,
+                    email: response.data.feed.entry[0].gsx$email.$t,
                 }
             );
         })
