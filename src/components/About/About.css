@@ -25,6 +25,11 @@
     color: #777;
 }
 
+.about-bio-text-block.h2 {
+    font-size: 1.3rem;
+    text-indent: 0;
+}
+
 .about-bio-text-block.devToolList {
     font-size: 2rem;
     text-indent: 0;
