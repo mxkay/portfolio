@@ -5,7 +5,7 @@ const Contact = ({ name, pronouns, email }) =>
     <div className="contact">
         <div className="contact-name">{name}</div>
         <div className="contact-pronouns">{pronouns}</div>
-        <div className="contact-email">{email}</div>
+        <a className="contact-email" href={email}>{email}</a>
     </div>
 
 export default Contact;
