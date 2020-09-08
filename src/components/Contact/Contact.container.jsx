@@ -3,12 +3,13 @@ import axios from "axios";
 import Contact from "./Contact";
 
 const ContactContainer = () => {
-
+    
     const [contactData, updateContactData] = useState({
         name: "",
         pronouns: "",
         email: "",
     });
+    const [copyStatus, setCopyStatus] = useState(false);
 
     // ON MOUNT
     useEffect( () => {
@@ -31,7 +32,11 @@ const ContactContainer = () => {
         .catch( err => console.log('error loading ajax'));
     },[]);
 
-    return <Contact {...contactData} />;
+    const handleCopy = () => {
+        setCopyStatus(true);
+    }
+
+    return <Contact {...contactData} copyStatus={copyStatus} handleCopy={handleCopy} />;
 }
 
 export { ContactContainer };
