@@ -10,6 +10,7 @@ import Layout from "./components/Layout/Layout";
 import StickyHeader from "./components/StickyHeader/StickyHeader";
 import { ProfileContainer as Profile } from "./components/Profile/Profile.container";
 import { AboutContainer as About } from "./components/About/About.container";
+import { ContactContainer as Contact } from "./components/Contact/Contact.container";
 import Body from "./components/Body/Body";
 import ProjectPortfolio from "./components/ProjectPortfolio/ProjectPortfolio";
 
@@ -46,7 +47,7 @@ function App() {
               :navigation.page === "about" ?
                 <About />
               :navigation.page === "contact" ?
-                <></>
+                <Contact />
               :
                 <></>
               }
