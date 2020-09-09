@@ -1,22 +1,3 @@
-@keyframes fadeout {
-    from {
-        color: rgba( 255, 255, 255, 1 );
-    }
-    to {
-        color: rgba( 255, 255, 255, 0 );
-    }
-}
-
-@keyframes vanish {
-    from {
-        display: block;
-    }
-    to {
-        display: none;
-    }
-}
-
-
 .contact {
     width: 100%;
     height: auto;
@@ -42,11 +23,20 @@
     margin: 0.5em;
 }
 
+@keyframes fadeout {
+    from {
+        color: rgba( 255, 255, 255, 1 );
+    }
+    to {
+        color: rgba( 255, 255, 255, 0 );
+    }
+}
+
 .contact-email-status {
     height: 1em;
 }
 
-.contact-email-status.inactive > * {
+.contact-email-status.inactive {
     animation-name: fadeout;
     animation-duration: 1s;
     animation-direction: normal;
