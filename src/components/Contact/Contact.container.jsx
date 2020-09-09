@@ -9,13 +9,12 @@ const ContactContainer = () => {
         pronouns: "",
         email: "",
     });
-    const [copyStatus, setCopyStatus] = useState(false);
-
+    
     // ON MOUNT
     useEffect( () => {
         // const sheetURL = 'https://docs.google.com/spreadsheets/d/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/edit#gid=677653555';
         const sheetAsJSON = 'https://spreadsheets.google.com/feeds/list/12WudbKp3rSdJJpJx7ANPEcC8J7unsYWwWaHBpXjtfPo/2/public/full?alt=json'
-
+        
         // FETCH profile data
         axios(sheetAsJSON)
         // STORE profile data to state
@@ -27,16 +26,25 @@ const ContactContainer = () => {
                     pronouns: response.data.feed.entry[0].gsx$pronouns.$t,
                     email: response.data.feed.entry[0].gsx$email.$t,
                 }
-            );
-        })
-        .catch( err => console.log('error loading ajax'));
-    },[]);
-
+                );
+            })
+            .catch( err => console.log('error loading ajax'));
+        },[]);
+        
+    const [copyStatus, setCopyStatus] = useState(false);
+    const [isMessageVisible, setIsMessageVisible] = useState(false);
     const handleCopy = () => {
+        setIsMessageVisible(true)
         setCopyStatus(true);
+        setTimeout( () => {
+            setCopyStatus(false);
+            setTimeout( () => {
+                setIsMessageVisible(false)
+            }, 1000);
+        }, 1000);
     }
 
-    return <Contact {...contactData} copyStatus={copyStatus} handleCopy={handleCopy} />;
+    return <Contact {...contactData} copyStatus={copyStatus} isMessageVisible={isMessageVisible} handleCopy={handleCopy} />;
 }
 
 export { ContactContainer };

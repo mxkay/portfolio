@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./Contact.css";
 
-const Contact = ({ name, pronouns, email, copyStatus, handleCopy }) => 
+const Contact = ({ name, pronouns, email, copyStatus, isMessageVisible, handleCopy }) => 
     <div className="contact">
         <div className="contact-name">{name}</div>
         <div className="contact-pronouns">{pronouns}</div>
@@ -11,13 +11,11 @@ const Contact = ({ name, pronouns, email, copyStatus, handleCopy }) =>
             onCopy={handleCopy}
             text={email}
         >
-            <Button className="contact-email">{email}</Button>
+            <Button className="contact-email" variant="secondary" >{email}</Button>
         </CopyToClipboard>
-        { copyStatus ?
-            <div className="contact-email-status-message">copied to clipboard!</div>
-        :
-            <></>
-        }
+        <div className={`contact-email-status ${copyStatus ? "active" : "inactive"}`}>
+            { isMessageVisible ? <div>copied to clipboard!</div> : <></>}
+        </div>
     </div>
 
 export default Contact;

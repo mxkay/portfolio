@@ -1,10 +1,28 @@
+@keyframes fadeout {
+    from {
+        color: rgba( 255, 255, 255, 1 );
+    }
+    to {
+        color: rgba( 255, 255, 255, 0 );
+    }
+}
+
+@keyframes vanish {
+    from {
+        display: block;
+    }
+    to {
+        display: none;
+    }
+}
+
+
 .contact {
     width: 100%;
     height: auto;
     padding: 20px;
     border-radius: 10px;
-    border-width: 4px;
-    border-color: #1B1D24;
+    border: 4px solid #1B1D24;
     background-color: #24292E;
     color: white;
 }
@@ -21,4 +39,16 @@
 
 .contact-email {
     font-size: 1.5rem;
+    margin: 0.5em;
+}
+
+.contact-email-status {
+    height: 1em;
+}
+
+.contact-email-status.inactive > * {
+    animation-name: fadeout;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
 }
