@@ -108,7 +108,7 @@ const Background = props => {
         }, 50);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [height,width]);
   
     return (
         <div className="background-wrapper">
