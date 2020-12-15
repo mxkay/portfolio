@@ -42,7 +42,7 @@ const Background = props => {
                     h / 2 + size/10 * trans_y(x_0,y_0)
                 );
 
-                // color based on vertex A's position
+                // color based on Vertex 0's position
                 ctx.fillStyle = `rgba(
                     ${190},
                     ${220*(0.5 + Math.sin( 3*a + Math.PI*r )/2)},
