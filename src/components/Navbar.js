@@ -23,35 +23,54 @@ const Navbar = ({ locr, routes }) => {
   );
 };
 
-const Nav = styled.nav``;
-
-const List = styled.ul.attrs(({ isVertical }) => ({
-  style: {
-    transform: isVertical ? 'translate(calc(50%), 0) rotate(90deg)' : 'translate(0, 0) rotate(0)'
-  }
-}))`
-  display: flex;
-  justify-content: space-around;
-  transform-origin: 100px 100px;
-  transition: transform 1s linear;
-  transform: translate(0, 0) rotate(0);
-
-  list-style: none;
+const Nav = styled.nav`
+  width: 100%;
+  height: 100%;
 `;
 
 const ListItem = styled.li.attrs(({ isVertical }) => ({
   style: {
-    transform: isVertical ? 'rotate(-90deg)' : 'rotate(0)'
   }
 }))`
-  transition: transform 1s linear;
-  transform: rotate(0);
-
   & a {
     padding: 2em;
     background-color: #DEF;
     text-decoration: none;
   }
+`;
+
+const List = styled.ul.attrs(({ isVertical }) => ({
+  style: {
+    animationName: isVertical ? 'rotate-vertical' : 'rotate-horizontal'
+  }
+}))`
+  @keyframes rotate-vertical {
+    from {
+      transform: translate(0, 0) rotate(0);
+    }
+    to {
+      transform: translate(50%, 0) rotate(90deg);
+    }
+  }
+
+  @keyframes rotate-horizontal {
+    from {
+      transform: translate(50%, 0) rotate(90deg);
+    }
+    to {
+      transform: translate(0, 0) rotate(0);
+    }
+  }
+
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+
+  display: flex;
+  justify-content: space-around;
+  transform-origin: 0 0;
+
+  list-style: none;
 `;
 
 export default Navbar;
