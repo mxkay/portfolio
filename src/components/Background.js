@@ -44,7 +44,7 @@ const CanvasWrapper = styled.div.attrs(({ offsetX, offsetY }) => ({
   left: 0;
   width: 120vw;
   height: 120vh;
-  filter: brightness(30%);
+  filter: brightness(20%);
   background-image: url(https://apod.nasa.gov/apod/image/2103/NGC1499_Akar_3296.jpg);
   background-position:
     calc(${50 + Math.random() * 20 - 10}%)
