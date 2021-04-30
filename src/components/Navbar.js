@@ -1,20 +1,30 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Navbar = ({ locr, routes }) => {
+const Navbar = ({ routes }) => {
   const { pathname } = useLocation();
-  const [isVertical, setIsVertical] = useState(pathname === '/');
+  const [isVertical, setIsVertical] = useState({
+    isAnimated: false,
+    isVertical: pathname === '/'
+  });
 
-  useEffect(() => {
+  useEffect(async () => {
     setIsVertical(pathname === '/');
-  }, [pathname === '/']);
+  }, [pathname]);
+
+  console.log(pathname, isVertical);
 
   return (
     <Nav isVertical={isVertical}>
-      <List isVertical={isVertical}>
+      <List
+        isVertical={isVertical}
+      >
         {routes.map(({ path, key }) => (
-          <ListItem key={key} isVertical={isVertical}>
+          <ListItem
+            key={key}
+            isVertical={isVertical}
+          >
             <Link to={path}>{key}</Link>
           </ListItem>
         ))}
@@ -23,54 +33,43 @@ const Navbar = ({ locr, routes }) => {
   );
 };
 
-const Nav = styled.nav`
-  width: 100%;
-  height: 100%;
+const Link = styled((props) => <RouterLink {...props} />)`
+  display: block;
+  font-size: 1.4rem;
+  padding: 1em 4em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background-color: #AAD;
+
+  :focus {
+    filter: sepia(200%);
+  }
 `;
 
-const ListItem = styled.li.attrs(({ isVertical }) => ({
-  style: {
-  }
-}))`
-  & a {
-    padding: 2em;
-    background-color: #DEF;
-    text-decoration: none;
-  }
+const ListItem = styled.li`
+  
 `;
 
 const List = styled.ul.attrs(({ isVertical }) => ({
   style: {
-    animationName: isVertical ? 'rotate-vertical' : 'rotate-horizontal'
+    flexDirection: isVertical ? 'column' : 'row',
+    alignItems: isVertical ? 'center' : 'flex-start'
   }
 }))`
-  @keyframes rotate-vertical {
-    from {
-      transform: translate(0, 0) rotate(0);
-    }
-    to {
-      transform: translate(50%, 0) rotate(90deg);
-    }
-  }
-
-  @keyframes rotate-horizontal {
-    from {
-      transform: translate(50%, 0) rotate(90deg);
-    }
-    to {
-      transform: translate(0, 0) rotate(0);
-    }
-  }
-
-  animation-duration: 1s;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-around;
-  transform-origin: 0 0;
-
+  justify-content: space-evenly;
   list-style: none;
+`;
+
+const Nav = styled.nav`
+  width: 100%;
+  height: 100%;
 `;
 
 export default Navbar;
