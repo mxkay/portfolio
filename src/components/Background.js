@@ -9,7 +9,7 @@ const Background = props => {
   const [baseOffset, setBaseOffset] = useState({});
 
   useEffect(() => {
-    setBaseOffset({ x: 50 + Math.random() * 20 - 10, y: 50 + Math.random() * 20 - 10 });
+    setBaseOffset({ x: 50 + Math.random() * 40 - 20, y: 50 + Math.random() * 40 - 20 });
   }, []);
 
   return (
