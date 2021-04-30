@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Background from './components/Background';
 
 const routes = [
   {
@@ -24,13 +25,14 @@ const routes = [
 
 export default function App () {
   return (
-    <Suspense fallback={<div>AHHHH!</div>}>
-      <Router>
-        <nav>
-          {routes.map(({ path, key }) => <Link key={key} to={path}>{key}</Link>)}
-        </nav>
-        <Switch>
-          {
+    <Background>
+      <Suspense fallback={<div>AHHHH!</div>}>
+        <Router>
+          <nav>
+            {routes.map(({ path, key }) => <Link key={key} to={path}>{key}</Link>)}
+          </nav>
+          <Switch>
+            {
             routes.map(({ path, exact, key, Component }) => (
               <Route
                 path={path}
@@ -40,8 +42,9 @@ export default function App () {
               />
             ))
           }
-        </Switch>
-      </Router>
-    </Suspense>
+          </Switch>
+        </Router>
+      </Suspense>
+    </Background>
   );
 }
