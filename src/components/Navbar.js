@@ -4,16 +4,11 @@ import styled from 'styled-components';
 
 const Navbar = ({ routes }) => {
   const { pathname } = useLocation();
-  const [isVertical, setIsVertical] = useState({
-    isAnimated: false,
-    isVertical: pathname === '/'
-  });
+  const [isVertical, setIsVertical] = useState(pathname === '/');
 
   useEffect(async () => {
     setIsVertical(pathname === '/');
   }, [pathname]);
-
-  console.log(pathname, isVertical);
 
   return (
     <Nav isVertical={isVertical}>
@@ -35,21 +30,38 @@ const Navbar = ({ routes }) => {
 
 const Link = styled((props) => <RouterLink {...props} />)`
   display: block;
-  font-size: 1.4rem;
-  padding: 1em 4em;
+  font-size: 1.6rem;
+  padding: 0.8em 3em;
   border-radius: 0.5em;
+  border: 5px solid;
+  border-top-color: #DEF;
+  border-right-color: #456;
+  border-bottom-color: #456;
+  border-left-color: #DEF;
   text-decoration: none;
   font-weight: bold;
   color: black;
   background-color: #AAD;
 
-  :focus {
-    filter: sepia(200%);
+  &:link {
+    background-color: #ADF;
   }
+
+  &:active, &:target {
+    background-color: #FDA;
+  }
+
+  outline: none;
 `;
 
 const ListItem = styled.li`
-  
+  border-radius: 1.5em;
+  border: 0.5em solid rgba(0,0,0,0);
+  padding: 0.5em;
+
+  &:focus-within {
+    border-color: #DEF #456 #456 #DEF;
+  }
 `;
 
 const List = styled.ul.attrs(({ isVertical }) => ({
