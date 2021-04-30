@@ -15,8 +15,8 @@ const Background = props => {
   return (
     <Wrapper>
       <CanvasWrapper
-        offsetX={`calc(${baseOffset.x}% - ${200 * (x / width - 0.5)}px)`}
-        offsetY={`calc(${baseOffset.y}% - ${200 * (y / height - 0.5)}px)`}
+        offsetX={`calc(${baseOffset.x}% - ${50 * (x / width - 0.5)}px)`}
+        offsetY={`calc(${baseOffset.y}% - ${50 * (y / height - 0.5)}px)`}
       />
       <ContentWrapper>
         {props.children}
