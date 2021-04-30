@@ -1,5 +1,7 @@
-export default () => (
+const About = () => (
   <div>
     About
   </div>
 );
+
+export default About;
