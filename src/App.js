@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Background from './components/Background';
-import NavBar from './components/NavBar';
+import Navbar from './components/Navbar';
 
 const routes = [
   {
@@ -29,7 +29,7 @@ export default function App () {
     <Background>
       <Suspense fallback={<div>AHHHH!</div>}>
         <Router>
-          <Route path='*' render={props => <NavBar {...props} routes={routes} />} />
+          <Navbar routes={routes} />
           <Switch>
             {
             routes.map(({ path, exact, key, Component }) => (
