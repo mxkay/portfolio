@@ -1,65 +1,23 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useWindowDimensions from '../hooks/useWindowDimensions';
+import useMousePosition from '../hooks/useMousePosition';
 import styled from 'styled-components';
 
 const Background = props => {
-  const { height, width } = useWindowDimensions();
-  const [canvasSize, setCanvasSize] = useState(null);
-  const canvasRef = useRef(null);
+  const { x, y } = useMousePosition();
+  const { width, height } = useWindowDimensions();
+  const [baseOffset, setBaseOffset] = useState({});
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-
-    ctx.clearRect(0, 0, canvasSize, canvasSize);
-
-    // http://jsfiddle.net/m1erickson/8j6kdf4o/
-    const drawStar = (cx, cy, spikes, outerRadius, innerRadius, rot = Math.PI / 4) => {
-      let x = cx;
-      let y = cy;
-      const step = Math.PI / spikes;
-
-      ctx.beginPath();
-      ctx.moveTo(cx, cy - outerRadius);
-      for (let i = 0; i < spikes; i++) {
-        x = cx + Math.cos(rot) * outerRadius;
-        y = cy + Math.sin(rot) * outerRadius;
-        ctx.lineTo(x, y);
-        rot += step;
-
-        x = cx + Math.cos(rot) * innerRadius;
-        y = cy + Math.sin(rot) * innerRadius;
-        ctx.lineTo(x, y);
-        rot += step;
-      }
-      ctx.lineTo(cx, cy - outerRadius);
-      ctx.closePath();
-      ctx.lineWidth = 5;
-      ctx.strokeStyle = 'blue';
-      ctx.stroke();
-      ctx.fillStyle = 'skyblue';
-      ctx.fill();
-    };
-
-    ctx.globalCompositeOperation = 'source-over';
-    for (let i = 0; i < 64; i++) {
-      const distance = Math.random();
-      setTimeout(() => {
-        ctx.filter = `blur(${1 + distance}px)`;
-        drawStar(Math.random() * canvasSize, Math.random() * canvasSize, 4, 2, (1 - distance) * 10 + 3);
-      }, distance * 5000);
-    }
-  }, [canvasSize]);
-
-  useEffect(() => {
-    setCanvasSize(200 * Math.ceil((height > width ? height : width) / 200));
-  }, [width, height]);
+    setBaseOffset({ x: 50 + Math.random() * 20 - 10, y: 50 + Math.random() * 20 - 10 });
+  }, []);
 
   return (
     <Wrapper>
-      <CanvasWrapper>
-        <Canvas ref={canvasRef} width={canvasSize} height={canvasSize} />
-      </CanvasWrapper>
+      <CanvasWrapper
+        offsetX={`calc(${baseOffset.x}% - ${200 * (x / width - 0.5)}px)`}
+        offsetY={`calc(${baseOffset.y}% - ${200 * (y / height - 0.5)}px)`}
+      />
       <ContentWrapper>
         {props.children}
       </ContentWrapper>
@@ -71,26 +29,26 @@ const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  background-color: black;
+  background: radial-gradient(ellipse at center, midnightblue 0%, black 100%);
+  overflow: clip;
 `;
 
-const CanvasWrapper = styled.div`
+const CanvasWrapper = styled.div.attrs(({ offsetX, offsetY }) => ({
+  style: {
+    backgroundPosition: `${offsetX} ${offsetY}`
+  }
+}))`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -99;
-  background-color: midnightblue;
-  background: radial-gradient(ellipse at center, darkblue 0%, midnightblue 100%);
+  width: 120vw;
+  height: 120vh;
   filter: brightness(30%);
-`;
-
-const Canvas = styled.canvas`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-${({ width }) => width / 2}px, -${({ height }) => height / 2}px);
+  background-image: url(https://apod.nasa.gov/apod/image/2103/NGC1499_Akar_3296.jpg);
+  background-position:
+    calc(${50 + Math.random() * 20 - 10}%)
+    calc(${50 + Math.random() * 20 - 10}%);
 `;
 
 const ContentWrapper = styled.div`
@@ -99,6 +57,7 @@ const ContentWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 `;
 
 export default Background;
