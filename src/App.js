@@ -1,7 +1,7 @@
-import { Suspense, lazy } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Background from './components/Background';
-import Navbar from './components/Navbar';
+import Menu from './components/Menu';
 
 const routes = [
   {
