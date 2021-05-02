@@ -34,6 +34,7 @@ const StyledGate = styled.div`
       height: 100%;
       border-left: 4px solid #DEF;
       border-right: 4px solid #456;
+      filter: blur(1.5px);
 
       @keyframes open-width {
         0% {

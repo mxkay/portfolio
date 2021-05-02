@@ -19,39 +19,38 @@ const StyledMenu = styled.nav`
     align-items: ${({ isVertical }) => isVertical ? 'center' : 'flex-start'};
     list-style: none;
 
-  }
-
-  &>ul>li{
-    padding: 0.2em;
-    border: 0.2em solid rgba(0,0,0,0);
-    border-left: none;
-    border-right: none;
-    transform: skewX(20deg);
-    
-    &:focus-within {
-      transition: border-color 0.2s linear, transform 0.2s linear;
-      transform: skewX(-20deg);
-      border-color: #DEF #456 #456 #DEF;
-    }
-  }
-
-  &>ul>li>a {
-    display: block;
-    padding: 0.2em 1em;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-
-    outline: none;
-
-    transform: skewX(-20deg);
-    &:focus {
-      transition: transform 0.2s linear;
+    &>li {
+      padding: 0.2em;
+      border: 0.2em solid rgba(0,0,0,0);
+      border-left: none;
+      border-right: none;
       transform: skewX(20deg);
-      border-color: #DEF #456 #456 #DEF;
+      
+      &:focus-within, &:hover {
+        transition: border-color 0.2s linear, transform 0.2s linear;
+        transform: skewX(-20deg);
+        border-color: #DEF #456 #456 #DEF;
+      }
+      
+      &>a {
+        display: block;
+        padding: 0.2em 1em;
+        text-decoration: none;
+        font-weight: bold;
+        color: #DEF;
+        outline: none;
+        
+        transform: skewX(-20deg);
+      }
+      
+      &:focus-within>a, &:hover>a {
+        transition: transform 0.2s linear;
+        transform: skewX(20deg);
+        border-color: #DEF #456 #456 #DEF;
+      }
     }
   }
-`;
+  `;
 
 const Menu = ({ routes, open, setOpen }) => {
   const { pathname } = useLocation();
