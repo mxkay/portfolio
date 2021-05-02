@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledGate = styled.div`
@@ -10,9 +11,9 @@ const StyledGate = styled.div`
   height: 100%;
 
   &>div {
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
+    animation-duration: ${({ animate }) => animate ? '0.5s' : '0'};
     animation-delay: 0.2s;
+    animation-timing-function: ease-out;
     animation-fill-mode: both;
 
     :nth-child(1) {
@@ -61,8 +62,8 @@ const StyledGate = styled.div`
   }
 `;
 
-const Gate = ({ children }) => (
-  <StyledGate animate={animateRef.current}>
+const Gate = ({ children, animate = true }) => (
+  <StyledGate animate={animate}>
     <div>
       {children}
     </div>
