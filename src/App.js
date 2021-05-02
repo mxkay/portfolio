@@ -1,5 +1,5 @@
-import { useState, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import Background from './components/Background';
 import Menu from './components/Menu';
 import Layout from './components/Layout';

@@ -20,8 +20,8 @@ const StyledGate = styled.div`
       height: 100%;
 
       @keyframes open-clip {
-        0% { clip-path: inset(0 calc(100% + 1em)); }
-        100% { clip-path: inset(0 0); }
+        0% { clip-path: inset(0 100%); }
+        100% { clip-path: inset(0 -2em); }
       }
 
       animation-name: open-clip;
@@ -42,7 +42,7 @@ const StyledGate = styled.div`
         }
         100% {
           left: -1em;
-          width: calc(100% + 1em);
+          width: calc(100% + 2em);
         }
       }
 
