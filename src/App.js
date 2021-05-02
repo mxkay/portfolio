@@ -7,6 +7,7 @@ import Menu from './components/Menu';
 import About from './modules/about';
 import Portfolio from './modules/portfolio';
 import Commission from './modules/commission';
+import Footer from './components/Footer';
 
 const routes = [
   {
@@ -54,6 +55,7 @@ const App = () => {
               />
             ))}
           </Switch>
+          <Footer />
         </Layout>
       </Suspense>
     </Background>
