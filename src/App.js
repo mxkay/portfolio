@@ -1,8 +1,9 @@
 import { Suspense } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import Background from './components/Background';
-import Menu from './components/Menu';
 import Layout from './components/Layout';
+import Intro from './components/Intro';
+import Menu from './components/Menu';
 import About from './modules/about';
 import Portfolio from './modules/portfolio';
 import Commission from './modules/commission';
@@ -38,11 +39,10 @@ const App = () => {
   // const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-
     <Background>
       <Suspense fallback={<div>AHHHH!</div>}>
         <Layout path={location.pathname}>
-          <h1>Hi, I'm Mathilda</h1>
+          <Intro />
           <Menu routes={routes.filter(route => route.key)} />
           <Switch>
             {routes.map(({ path, exact, Component }, index) => (
