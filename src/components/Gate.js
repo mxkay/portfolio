@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledGate = styled.div`
@@ -12,7 +10,7 @@ const StyledGate = styled.div`
 
   &>div {
     animation-duration: ${({ animate }) => animate ? '0.5s' : '0'};
-    animation-delay: 0.2s;
+    animation-delay: ${({ animate }) => animate ? '0.2s' : '0'};
     animation-timing-function: ease-out;
     animation-fill-mode: both;
 
@@ -62,7 +60,7 @@ const StyledGate = styled.div`
   }
 `;
 
-const Gate = ({ children, animate = true }) => (
+const Gate = ({ children, animate = false }) => (
   <StyledGate animate={animate}>
     <div>
       {children}
