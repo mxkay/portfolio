@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
 const StyledGate = styled.div`
@@ -10,8 +11,8 @@ const StyledGate = styled.div`
 
   &>div {
     animation-duration: 0.5s;
-    animation-delay: 0.5s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
+    animation-delay: 0.2s;
     animation-fill-mode: both;
 
     :nth-child(1) {
@@ -20,8 +21,9 @@ const StyledGate = styled.div`
       height: 100%;
 
       @keyframes open-clip {
-        0% { clip-path: inset(0 100%); }
-        100% { clip-path: inset(0 -2em); }
+        0% { clip-path: inset(50% 50%); }
+        50% { clip-path: inset(0 50%); }
+        100% { clip-path: inset(0 -40px); }
       }
 
       animation-name: open-clip;
@@ -29,21 +31,28 @@ const StyledGate = styled.div`
       
     :nth-child(2) {
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
       border-left: 4px solid #DEF;
       border-right: 4px solid #456;
       filter: blur(1.5px);
 
       @keyframes open-width {
         0% {
+          top: 50%;
           left: 50%;
           width: 0;
+          height: 0;
+        }
+        50% {
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 100%;
         }
         100% {
-          left: -1em;
-          width: calc(100% + 2em);
+          top: 0;
+          left: -40px;
+          width: calc(100% + 80px);
+          height: 100%;
         }
       }
 
@@ -53,7 +62,7 @@ const StyledGate = styled.div`
 `;
 
 const Gate = ({ children }) => (
-  <StyledGate>
+  <StyledGate animate={animateRef.current}>
     <div>
       {children}
     </div>
