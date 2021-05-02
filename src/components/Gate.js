@@ -30,6 +30,7 @@ const StyledGate = styled.div`
       
     :nth-child(2) {
       position: absolute;
+      z-index: -1;
       border-left: 4px solid #DEF;
       border-right: 4px solid #456;
       filter: blur(1.5px);
