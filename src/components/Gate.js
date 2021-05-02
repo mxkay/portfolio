@@ -7,7 +7,7 @@ const StyledGate = styled.div`
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  
+
   &>div {
     animation-duration: 0.5s;
     animation-delay: 0.5s;
@@ -20,7 +20,7 @@ const StyledGate = styled.div`
       height: 100%;
 
       @keyframes open-clip {
-        0% { clip-path: inset(0 100%); }
+        0% { clip-path: inset(0 calc(100% + 1em)); }
         100% { clip-path: inset(0 0); }
       }
 
@@ -41,8 +41,8 @@ const StyledGate = styled.div`
           width: 0;
         }
         100% {
-          left: 0;
-          width: 100%;
+          left: -1em;
+          width: calc(100% + 1em);
         }
       }
 

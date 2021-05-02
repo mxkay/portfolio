@@ -4,16 +4,20 @@ import styled from 'styled-components';
 
 const StyledMenu = styled.nav`
   grid-area: nav;
-  font-size: 3rem;
-
+  font-size: ${({ isVertical }) => isVertical ? '3rem' : '2rem'};
+  height: 100%;
+  
   &>ul {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: ${({ isVertical }) => isVertical ? 'column' : 'row'};
     justify-content: space-evenly;
+    align-items: ${({ isVertical }) => isVertical ? 'center' : 'flex-start'};
     list-style: none;
+
   }
 
   &>ul>li{
@@ -52,19 +56,13 @@ const Menu = ({ routes, open, setOpen }) => {
   const { pathname } = useLocation();
   const [isVertical, setIsVertical] = useState(pathname === '/');
 
-  useEffect(async () => {
+  useEffect(() => {
     setIsVertical(pathname === '/');
   }, [pathname]);
 
   return (
-    <StyledMenu>
-      <ul
-        style={{
-          flexDirection: isVertical ? 'column' : 'row',
-          alignItems: isVertical ? 'center' : 'flex-start',
-          fontSize: isVertical ? '3rem' : '2rem'
-        }}
-      >
+    <StyledMenu isVertical={isVertical}>
+      <ul>
         {routes.map(({ path, key }) => (
           <li key={key}>
             <Link to={path}>{key}</Link>

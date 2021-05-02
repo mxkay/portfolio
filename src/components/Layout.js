@@ -7,7 +7,7 @@ const Layout = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 5fr 1fr;
+  grid-template-rows: 1fr 1fr 6fr 1fr;
   grid-template-areas:
     'header'
     'nav'

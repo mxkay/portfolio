@@ -24,7 +24,7 @@ const CanvasWrapper = styled.div.attrs(({ offsetX, offsetY }) => ({
   width: 120vw;
   height: 120vh;
   filter: brightness(25%);
-  background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1619905609/NGC1499_Akar_tile_2670_a7eznz.png);
+  background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1619937417/orion-nebula_tile_3000_h7ddhz.png);
 `;
 
 const Wrapper = styled.div`

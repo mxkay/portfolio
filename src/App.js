@@ -2,8 +2,10 @@ import { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import Background from './components/Background';
 import Menu from './components/Menu';
-import Gate from './components/Gate';
 import Layout from './components/Layout';
+import About from './modules/about';
+import Portfolio from './modules/portfolio';
+import Commission from './modules/commission';
 
 const routes = [
   {
@@ -15,19 +17,19 @@ const routes = [
     key: 'About',
     path: '/about',
     exact: true,
-    Component: lazy(() => import('./modules/about'))
+    Component: About
   },
   {
     key: 'Portfolio',
     path: '/portfolio',
     exact: true,
-    Component: lazy(() => import('./modules/portfolio'))
+    Component: Portfolio
   },
   {
     key: 'Commission',
     path: '/commission',
     exact: true,
-    Component: lazy(() => import('./modules/commission'))
+    Component: Commission
   }
 ];
 
@@ -42,7 +44,6 @@ const App = () => {
         <Layout path={location.pathname}>
           <h1>Hi, I'm Mathilda</h1>
           <Menu routes={routes.filter(route => route.key)} />
-          {/* <Gate> */}
           <Switch>
             {routes.map(({ path, exact, Component }, index) => (
               <Route
@@ -53,7 +54,6 @@ const App = () => {
               />
             ))}
           </Switch>
-          {/* </Gate> */}
         </Layout>
       </Suspense>
     </Background>
