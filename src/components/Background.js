@@ -37,7 +37,6 @@ const Wrapper = styled.div`
 `;
 
 const Background = props => {
-  const { x, y } = useMousePosition();
   const { width, height } = useWindowDimensions();
   const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 });
   const backgroundVelocityRef = useRef();
@@ -61,8 +60,8 @@ const Background = props => {
   return (
     <Wrapper>
       <CanvasWrapper
-        offsetX={`${backgroundPosition.x - 50 * (x / width - 0.5)}px`}
-        offsetY={`${backgroundPosition.y - 50 * (y / height - 0.5)}px`}
+        offsetX={`${backgroundPosition.x}px`}
+        offsetY={`${backgroundPosition.y}px`}
       />
       <ContentWrapper>
         {props.children}
