@@ -60,7 +60,7 @@ const StyledGate = styled.div`
   }
 `;
 
-const Gate = ({ children, animate = false }) => (
+const Gate = ({ children, animate = true }) => (
   <StyledGate animate={animate}>
     <div>
       {children}
