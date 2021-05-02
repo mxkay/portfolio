@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const StyledMenu = styled.nav`
   width: 100%;
   height: 100%;
+  font-size: 3rem;
 
   &>ul {
     margin: 0;
@@ -17,8 +18,8 @@ const StyledMenu = styled.nav`
   }
 
   &>ul>li{
-    padding: 0.5em;
-    border: 0.5em solid rgba(0,0,0,0);
+    padding: 0.2em;
+    border: 0.2em solid rgba(0,0,0,0);
     border-left: none;
     border-right: none;
     transform: skewX(20deg);
@@ -32,11 +33,11 @@ const StyledMenu = styled.nav`
 
   &>ul>li>a {
     display: block;
-    font-size: 3rem;
-    padding: 0.2em 3em;
+    padding: 0.2em 1em;
     text-decoration: none;
     font-weight: bold;
     color: white;
+
     outline: none;
 
     transform: skewX(-20deg);
@@ -65,10 +66,7 @@ const Menu = ({ routes, open, setOpen }) => {
         }}
       >
         {routes.map(({ path, key }) => (
-          <li
-            key={key}
-            isVertical={isVertical}
-          >
+          <li key={key}>
             <Link to={path}>{key}</Link>
           </li>
         ))}
