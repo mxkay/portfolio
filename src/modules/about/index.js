@@ -1,7 +1,9 @@
+import Gate from '../../components/Gate';
+
 const About = () => (
-  <div>
+  <Gate>
     About
-  </div>
+  </Gate>
 );
 
 export default About;

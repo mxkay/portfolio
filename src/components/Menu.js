@@ -3,8 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledMenu = styled.nav`
-  width: 100%;
-  height: 100%;
+  grid-area: nav;
   font-size: 3rem;
 
   &>ul {
@@ -58,11 +57,12 @@ const Menu = ({ routes, open, setOpen }) => {
   }, [pathname]);
 
   return (
-    <StyledMenu isVertical={isVertical}>
+    <StyledMenu>
       <ul
         style={{
           flexDirection: isVertical ? 'column' : 'row',
-          alignItems: isVertical ? 'center' : 'flex-start'
+          alignItems: isVertical ? 'center' : 'flex-start',
+          fontSize: isVertical ? '3rem' : '2rem'
         }}
       >
         {routes.map(({ path, key }) => (

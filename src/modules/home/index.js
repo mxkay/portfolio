@@ -1,7 +1,7 @@
+import styled from 'styled-components';
+
 const Home = () => (
-  <div>
-    Home
-  </div>
+  <div />
 );
 
 export default Home;

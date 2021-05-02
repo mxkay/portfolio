@@ -1,14 +1,15 @@
 import { useState, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import Background from './components/Background';
 import Menu from './components/Menu';
+import Gate from './components/Gate';
+import Layout from './components/Layout';
 
 const routes = [
   {
-    key: 'Home',
     path: '/',
     exact: true,
-    Component: lazy(() => import('./modules/home'))
+    Component: () => <></>
   },
   {
     key: 'About',
@@ -21,29 +22,42 @@ const routes = [
     path: '/portfolio',
     exact: true,
     Component: lazy(() => import('./modules/portfolio'))
+  },
+  {
+    key: 'Commission',
+    path: '/commission',
+    exact: true,
+    Component: lazy(() => import('./modules/commission'))
   }
 ];
 
-export default function App () {
+const App = () => {
+  const location = useLocation();
+  // const [menuOpen, setMenuOpen] = useState(false);
+
   return (
+
     <Background>
       <Suspense fallback={<div>AHHHH!</div>}>
-        <Router>
-          <Navbar routes={routes} />
+        <Layout path={location.pathname}>
+          <h1>Hi, I'm Mathilda</h1>
+          <Menu routes={routes.filter(route => route.key)} />
+          {/* <Gate> */}
           <Switch>
-            {
-            routes.map(({ path, exact, key, Component }) => (
+            {routes.map(({ path, exact, Component }, index) => (
               <Route
                 path={path}
                 exact={exact}
-                key={key}
+                key={index}
                 render={props => <Component {...props} />}
               />
-            ))
-          }
+            ))}
           </Switch>
-        </Router>
+          {/* </Gate> */}
+        </Layout>
       </Suspense>
     </Background>
   );
-}
+};
+
+export default App;
