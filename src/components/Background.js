@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import useMousePosition from '../hooks/useMousePosition';
 import useAnimationFrame from '../hooks/useAnimationFrame';
 import styled from 'styled-components';
 
@@ -31,8 +30,8 @@ const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: black;
-  background: radial-gradient(ellipse at center, midnightblue 0%, black 100%);
+  background-color: #040404;
+  background: radial-gradient(ellipse at center, #040404 0%, black 100%);
   overflow: clip;
 `;
 

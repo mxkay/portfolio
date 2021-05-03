@@ -37,11 +37,11 @@ const Footer = () => {
   const { width } = useWindowDimensions();
   return (
     <StyledFoooter windowWidth={width}>
-      <Link to='/credit' className='left'>
+      <Link to='/artwork' className='left'>
         <Emoji symbol='🌈🧾 ' />
-        <span className={width < 1000 ? 'sr-only' : ''}>Learn about the art on this site</span>
+        <span className={width < 1000 ? 'sr-only' : ''}>Learn about artwork on this site</span>
       </Link>
-      <Link to='/coco' className='right'>
+      <Link to='/donate' className='right'>
         <span className={width < 1000 ? 'sr-only' : ''}>Buy me a cup of coco</span>
         <Emoji symbol=' 💵☕' />
       </Link>

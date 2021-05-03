@@ -1,9 +1,5 @@
-import Gate from '../../components/Gate';
-
-const About = () => (
-  <Gate>
-    Portfolio
-  </Gate>
+const Portfolio = () => (
+  <h1>Portfolio</h1>
 );
 
-export default About;
+export default Portfolio;

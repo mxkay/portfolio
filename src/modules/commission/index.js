@@ -1,9 +1,5 @@
-import Gate from '../../components/Gate';
-
 const Commission = () => (
-  <Gate>
-    Commission
-  </Gate>
+  <h1>Commission</h1>
 );
 
 export default Commission;

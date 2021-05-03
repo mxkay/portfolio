@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledGate = styled.div`
-  font-size: 3rem;
   grid-area: main;
   position: relative;
   margin: 0 auto;
