@@ -14,9 +14,8 @@ const routes = [
 const App = () => {
   return (
     <Router>
-      <Background>
-        <Switch routes={routes} />
-      </Background>
+      <Background />
+      <Switch routes={routes} />
     </Router>
   );
 };

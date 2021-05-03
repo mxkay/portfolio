@@ -1,15 +1,10 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Switch as RouterSwitch, Route, Redirect, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Intro from './components/Intro';
 import Menu from '../../components/Menu';
 import Footer from './components/Footer';
 import Gate from './components/Gate';
-import About from '../about';
-import Portfolio from '../portfolio';
-import Commission from '../commission';
-import Artwork from '../artwork';
-import Donate from '../donate';
 import joinUrl from '../../helpers/joinUrl';
 
 const buildPath = (endPoint) => joinUrl('/', endPoint);
@@ -24,31 +19,31 @@ const routes = [
     key: 'About',
     path: buildPath('/about'),
     exact: true,
-    Component: About
+    Component: lazy(() => import('../about'))
   },
   {
     key: 'Portfolio',
     path: buildPath('/portfolio'),
     exact: true,
-    Component: Portfolio
+    Component: lazy(() => import('../portfolio'))
   },
   {
     key: 'Commission',
     path: buildPath('/commission'),
     exact: true,
-    Component: Commission
+    Component: lazy(() => import('../commission'))
   },
   {
     key: '',
     path: buildPath('/artwork'),
     exact: true,
-    Component: Artwork
+    Component: lazy(() => import('../artwork'))
   },
   {
     key: '',
     path: buildPath('/donate'),
     exact: true,
-    Component: Donate
+    Component: lazy(() => import('../donate'))
   }
 ];
 
@@ -59,21 +54,25 @@ const Main = () => {
     <Layout path={location.pathname}>
       <Intro />
       <Menu routes={routes.filter(route => route.key)} />
-      <Suspense fallback={<div>AHHHH!</div>}>
-        <RouterSwitch>
-          {routes.map(({ path, exact, Component }, index) => (
-            <Route
-              path={path}
-              exact={exact}
-              key={index}
-              render={(props) => <Gate><Component {...props} /></Gate>}
-            />
-          ))}
-          <Route path='*'>
-            <Redirect to='/' />
-          </Route>
-        </RouterSwitch>
-      </Suspense>
+      <RouterSwitch>
+        {routes.map(({ path, exact, Component }, index) => (
+          <Route
+            path={path}
+            exact={exact}
+            key={index}
+            render={(props) => (
+              <Suspense fallback='AHHHHHHH!'>
+                <Gate>
+                  <Component {...props} />
+                </Gate>
+              </Suspense>
+            )}
+          />
+        ))}
+        <Route path='*'>
+          <Redirect to='/' />
+        </Route>
+      </RouterSwitch>
       <Footer />
     </Layout>
   );

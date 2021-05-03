@@ -1,5 +1,4 @@
-// SOURCE: https://stackoverflow.com/a/36862446
-
+// https://stackoverflow.com/a/36862446
 import { useState, useEffect } from 'react';
 
 function getWindowDimensions () {

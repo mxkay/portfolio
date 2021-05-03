@@ -1,18 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import useAnimationFrame from '../hooks/useAnimationFrame';
 import styled from 'styled-components';
 
-const ContentWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-`;
-
-const CanvasWrapper = styled.div.attrs(({ offsetX, offsetY }) => ({
+const StyledBackground = styled.div.attrs(({ offsetX, offsetY }) => ({
   style: {
     backgroundPosition: `${offsetX} ${offsetY}`
   }
@@ -20,19 +11,12 @@ const CanvasWrapper = styled.div.attrs(({ offsetX, offsetY }) => ({
   position: absolute;
   top: 0;
   left: 0;
-  width: 120vw;
-  height: 120vh;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
   filter: brightness(25%);
   background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1619937417/orion-nebula_tile_3000_h7ddhz.png);
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: #040404;
-  background: radial-gradient(ellipse at center, #040404 0%, black 100%);
-  overflow: clip;
+  transition: all 1s;
 `;
 
 const Background = props => {
@@ -57,15 +41,11 @@ const Background = props => {
   });
 
   return (
-    <Wrapper>
-      <CanvasWrapper
-        offsetX={`${backgroundPosition.x}px`}
-        offsetY={`${backgroundPosition.y}px`}
-      />
-      <ContentWrapper>
-        {props.children}
-      </ContentWrapper>
-    </Wrapper>
+    <StyledBackground
+      {...props}
+      offsetX={`${backgroundPosition.x}px`}
+      offsetY={`${backgroundPosition.y}px`}
+    />
   );
 };
 
