@@ -1,8 +1,8 @@
 import { Switch as RouterSwitch, Route, Redirect } from 'react-router-dom';
 
-const Switch = ({ baseUrl = '', routes, redirect }) => (
+const Switch = ({ routes, redirect }) => (
   <RouterSwitch>
-    {routes.map(({ path, exact, Component, Wrapper }, index) => (
+    {routes.map(({ path, exact, Component }, index) => (
       <Route
         path={path}
         exact={exact}

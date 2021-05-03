@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
-import { useLocation } from 'react-router-dom';
-import Switch from '../../components/Switch';
+import { Switch as RouterSwitch, Route, Redirect, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Intro from './components/Intro';
 import Menu from '../../components/Menu';
@@ -19,43 +18,37 @@ const routes = [
   {
     path: buildPath('/'),
     exact: true,
-    Component: () => <></>,
-    Wrapper: Gate
+    Component: () => <></>
   },
   {
     key: 'About',
     path: buildPath('/about'),
     exact: true,
-    Component: About,
-    Wrapper: Gate
+    Component: About
   },
   {
     key: 'Portfolio',
     path: buildPath('/portfolio'),
     exact: true,
-    Component: Portfolio,
-    Wrapper: Gate
+    Component: Portfolio
   },
   {
     key: 'Commission',
     path: buildPath('/commission'),
     exact: true,
-    Component: Commission,
-    Wrapper: Gate
+    Component: Commission
   },
   {
     key: '',
     path: buildPath('/artwork'),
     exact: true,
-    Component: Artwork,
-    Wrapper: Gate
+    Component: Artwork
   },
   {
     key: '',
     path: buildPath('/donate'),
     exact: true,
-    Component: Donate,
-    Wrapper: Gate
+    Component: Donate
   }
 ];
 
@@ -67,7 +60,19 @@ const Main = () => {
       <Intro />
       <Menu routes={routes.filter(route => route.key)} />
       <Suspense fallback={<div>AHHHH!</div>}>
-        <Switch baseUrl='/' routes={routes} redirect={buildPath('/')} />
+        <RouterSwitch>
+          {routes.map(({ path, exact, Component }, index) => (
+            <Route
+              path={path}
+              exact={exact}
+              key={index}
+              render={(props) => <Gate><Component {...props} /></Gate>}
+            />
+          ))}
+          <Route path='*'>
+            <Redirect to='/' />
+          </Route>
+        </RouterSwitch>
       </Suspense>
       <Footer />
     </Layout>
