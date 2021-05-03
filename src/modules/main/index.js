@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import Intro from './components/Intro';
 import Menu from '../../components/Menu';
 import Footer from './components/Footer';
-import Gate from '../../components/Gate';
+import Gate from './components/Gate';
 import About from '../about';
 import Portfolio from '../portfolio';
 import Commission from '../commission';
