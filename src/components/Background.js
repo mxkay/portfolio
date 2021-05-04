@@ -1,7 +1,8 @@
-import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import useAnimationFrame from '../hooks/useAnimationFrame';
 import styled from 'styled-components';
+
+const DELTA_TIME = 1000;
 
 const StyledBackground = styled.div.attrs(({ offsetX, offsetY }) => ({
   style: {
@@ -16,7 +17,7 @@ const StyledBackground = styled.div.attrs(({ offsetX, offsetY }) => ({
   height: 100%;
   filter: brightness(25%);
   background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1619937417/orion-nebula_tile_3000_h7ddhz.png);
-  transition: all 1s;
+  transition: all ${DELTA_TIME / 1000}s linear;
 `;
 
 const Background = props => {
@@ -33,12 +34,18 @@ const Background = props => {
     };
   }, []);
 
-  useAnimationFrame(deltaTime => {
-    setBackgroundPosition(prevPosition => ({
-      x: prevPosition.x + deltaTime * backgroundVelocityRef.current.x,
-      y: prevPosition.y + deltaTime * backgroundVelocityRef.current.y
-    }));
-  });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!document.hidden) {
+        setBackgroundPosition(prevPosition => ({
+          x: prevPosition.x + DELTA_TIME * backgroundVelocityRef.current.x,
+          y: prevPosition.y + DELTA_TIME * backgroundVelocityRef.current.y
+        }));
+      }
+    }, DELTA_TIME);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <StyledBackground
