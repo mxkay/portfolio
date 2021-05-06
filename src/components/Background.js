@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import useWindowDimensions from '../hooks/useWindowDimensions';
 import styled from 'styled-components';
 
 const DELTA_TIME = 1000;
@@ -21,12 +20,11 @@ const StyledBackground = styled.div.attrs(({ offsetX, offsetY }) => ({
 `;
 
 const Background = props => {
-  const { width, height } = useWindowDimensions();
   const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 });
   const backgroundVelocityRef = useRef();
 
   useEffect(() => {
-    const speed = 0.00005 * Math.min(width, height) * (Math.random() < 0.5 ? 1 : -1);
+    const speed = 0.00005 * Math.max(window.innerWidth, window.innerHeight) * (Math.random() < 0.5 ? 1 : -1);
     const angle = Math.PI / 3 * (Math.random() - 0.5);
     backgroundVelocityRef.current = {
       x: speed * Math.cos(angle),
