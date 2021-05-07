@@ -1,7 +1,7 @@
-import useWindowDimensions from '../../../hooks/useWindowDimensions';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Emoji from '../../../components/Emoji';
+import Emoji from './Emoji';
 
 const StyledFoooter = styled.footer`
   grid-area: footer;
