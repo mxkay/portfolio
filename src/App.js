@@ -1,11 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { Switch as RouterSwitch, Route, Redirect, useLocation } from 'react-router-dom';
+import { Switch as RouterSwitch, Route, Redirect } from 'react-router-dom';
 import Background from './components/Background';
-import Layout from './components/Layout';
-import Intro from './components/Intro';
-import Menu from './components/Menu';
-import Footer from './components/Footer';
-import Gate from './components/Gate';
+import ActivityIndicator from './components/ActivityIndicator';
 import joinUrl from './helpers/joinUrl';
 
 const buildPath = (endPoint) => joinUrl('/', endPoint);
@@ -49,36 +45,28 @@ const routes = [
 ];
 
 const App = () => {
-  const location = useLocation();
   return (
     <>
       <Background />
-      <Layout path={location.pathname}>
-        <Intro />
-        <Menu routes={routes.filter(route => route.key)} />
-        <RouterSwitch>
-          {routes.map(({ path, exact, Component }, index) => (
-            <Route
-              path={path}
-              exact={exact}
-              key={index}
-              render={(props) => (
-                <Suspense fallback='AHHHHHHH!'>
-                  <Gate>
-                    <Component {...props} />
-                  </Gate>
-                </Suspense>
-              )}
-            />
-          ))}
-          <Route path='*'>
-            <Redirect to='/' />
-          </Route>
-        </RouterSwitch>
-        <Footer />
-      </Layout>
+      <RouterSwitch>
+        {routes.map(({ path, exact, Component }, index) => (
+          <Route
+            path={path}
+            exact={exact}
+            key={index}
+            render={(props) => (
+              <Suspense fallback={() => <ActivityIndicator />}>
+                <Component {...props} />
+              </Suspense>
+            )}
+          />
+        ))}
+        <Route path='*'>
+          <Redirect to='/' />
+        </Route>
+      </RouterSwitch>
     </>
-  )
+  );
 };
 
 export default App;

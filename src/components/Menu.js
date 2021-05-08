@@ -52,7 +52,22 @@ const StyledMenu = styled.nav`
   }
   `;
 
-const Menu = ({ routes, open, setOpen }) => {
+const routes = [
+  {
+    key: 'About',
+    path: '/about'
+  },
+  {
+    key: 'Portfolio',
+    path: '/portfolio'
+  },
+  {
+    key: 'Commission',
+    path: '/commission'
+  }
+];
+
+const Menu = ({ open, setOpen }) => {
   const { pathname } = useLocation();
   const [isVertical, setIsVertical] = useState(pathname === '/');
 

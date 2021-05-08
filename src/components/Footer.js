@@ -5,7 +5,7 @@ import Emoji from './Emoji';
 
 const StyledFoooter = styled.footer`
   grid-area: footer;
-  font-size: ${({ windowWidth }) => windowWidth < 600 ? '1.5rem' : windowWidth < 900 ? '2.5rem' : '1.5rem'};
+  font-size: 1.5rem;
   width: 100%;
   height: 100%;
   display: grid;
