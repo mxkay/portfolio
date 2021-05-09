@@ -10,7 +10,7 @@ const routes = [
   {
     path: buildPath('/'),
     exact: true,
-    Component: () => <></>
+    Component: lazy(() => import('./pages/landing'))
   },
   {
     key: 'About',

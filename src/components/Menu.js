@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledMenu = styled.nav`
   grid-area: nav;
-  font-size: ${({ isVertical }) => isVertical ? '3rem' : '1.5rem'};
+  font-size: ${({ vertical }) => vertical ? '3rem' : '1.5rem'};
   height: 100%;
   
   &>ul {
@@ -14,9 +13,9 @@ const StyledMenu = styled.nav`
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: ${({ isVertical }) => isVertical ? 'column' : 'row'};
+    flex-direction: ${({ vertical }) => vertical ? 'column' : 'row'};
     justify-content: space-evenly;
-    align-items: ${({ isVertical }) => isVertical ? 'center' : 'flex-start'};
+    align-items: ${({ vertical }) => vertical ? 'center' : 'flex-start'};
     list-style: none;
 
     &>li {
@@ -67,25 +66,16 @@ const routes = [
   }
 ];
 
-const Menu = ({ open, setOpen }) => {
-  const { pathname } = useLocation();
-  const [isVertical, setIsVertical] = useState(pathname === '/');
-
-  useEffect(() => {
-    setIsVertical(pathname === '/');
-  }, [pathname]);
-
-  return (
-    <StyledMenu isVertical={isVertical}>
-      <ul>
-        {routes.map(({ path, key }) => (
-          <li key={key}>
-            <Link to={path}>{key}</Link>
-          </li>
-        ))}
-      </ul>
-    </StyledMenu>
-  );
-};
+const Menu = ({ vertical }) => (
+  <StyledMenu vertical={vertical}>
+    <ul>
+      {routes.map(({ path, key }) => (
+        <li key={key}>
+          <Link to={path}>{key}</Link>
+        </li>
+      ))}
+    </ul>
+  </StyledMenu>
+);
 
 export default Menu;

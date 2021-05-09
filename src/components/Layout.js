@@ -12,7 +12,7 @@ const Layout = styled.div`
   grid-template-areas:
     'header'
     'nav'
-    '${({ path }) => path === '/' ? 'nav' : 'main'}'
+    '${({ children }) => children.length <= 3 ? 'nav' : 'main'}'
     'footer';
   justify-content: center;
   align-items: center;
