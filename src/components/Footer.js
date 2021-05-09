@@ -32,6 +32,18 @@ const StyledFoooter = styled.footer`
     grid-area: right;
     justify-self: flex-end;
   }
+
+  a {
+    text-decoration: none;
+  }
+`;
+
+const Subtle = styled.div`
+  filter: grayscale(100%) opacity(30%);
+
+  :focus-within, :hover {
+    filter: none;
+  }
 `;
 
 const Footer = () => {
@@ -46,10 +58,12 @@ const Footer = () => {
         <span className={width < 1000 ? 'sr-only' : ''}>Buy me a cup of coco</span>
         <Emoji symbol=' 💵☕' />
       </Link>
-      <Link to='/developer' className='center'>
-        <Emoji symbol='🔒' />
-        <span className='sr-only'>Developer login</span>
-      </Link>
+      <Subtle>
+        <Link to='/developer' className='center'>
+          <Emoji symbol='🔒' />
+          <span className='sr-only'>Developer login</span>
+        </Link>
+      </Subtle>
     </StyledFoooter>
   );
 };
