@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Burger from './Burger';
 
 const StyledMenu = styled.nav`
   grid-area: nav;
@@ -14,8 +15,8 @@ const StyledMenu = styled.nav`
     display: flex;
     flex-wrap: wrap;
     flex-direction: ${({ vertical }) => vertical ? 'column' : 'row'};
-    justify-content: space-evenly;
-    align-items: ${({ vertical }) => vertical ? 'center' : 'flex-start'};
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
 
     &>li {
@@ -33,6 +34,7 @@ const StyledMenu = styled.nav`
       
       &>a {
         display: block;
+        align-items: center;
         padding: 0.2em 1em;
         text-decoration: none;
         font-weight: bold;
@@ -74,6 +76,7 @@ const Menu = ({ vertical }) => (
         </li>
       ))}
     </ul>
+    {/* <Burger /> */}
   </StyledMenu>
 );
 
