@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Burger from './Burger';
+
+import routes from '../router/routes';
 
 const StyledMenu = styled.nav`
   grid-area: nav;
@@ -15,7 +16,7 @@ const StyledMenu = styled.nav`
     display: flex;
     flex-wrap: wrap;
     flex-direction: ${({ vertical }) => vertical ? 'column' : 'row'};
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     list-style: none;
 
@@ -52,31 +53,15 @@ const StyledMenu = styled.nav`
   }
   `;
 
-const routes = [
-  {
-    key: 'About',
-    path: '/about'
-  },
-  {
-    key: 'Portfolio',
-    path: '/portfolio'
-  },
-  {
-    key: 'Commission',
-    path: '/commission'
-  }
-];
-
 const Menu = ({ vertical }) => (
   <StyledMenu vertical={vertical}>
     <ul>
-      {routes.map(({ path, key }) => (
+      {routes.filter(({key}) => key).map(({ path, key }) => (
         <li key={key}>
           <Link to={path}>{key}</Link>
         </li>
       ))}
     </ul>
-    {/* <Burger /> */}
   </StyledMenu>
 );
 

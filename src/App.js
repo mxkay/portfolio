@@ -1,48 +1,7 @@
-import { lazy, Suspense } from 'react';
 import { Switch as RouterSwitch, Route, Redirect } from 'react-router-dom';
 import Background from './components/Background';
-import ActivityIndicator from './components/ActivityIndicator';
-import joinUrl from './helpers/joinUrl';
 
-const buildPath = (endPoint) => joinUrl('/', endPoint);
-
-const routes = [
-  {
-    path: buildPath('/'),
-    exact: true,
-    Component: lazy(() => import('./pages/landing'))
-  },
-  {
-    key: 'About',
-    path: buildPath('/about'),
-    exact: true,
-    Component: lazy(() => import('./pages/about'))
-  },
-  {
-    key: 'Portfolio',
-    path: buildPath('/portfolio'),
-    exact: true,
-    Component: lazy(() => import('./pages/portfolio'))
-  },
-  {
-    key: 'Commission',
-    path: buildPath('/commission'),
-    exact: true,
-    Component: lazy(() => import('./pages/commission'))
-  },
-  {
-    key: '',
-    path: buildPath('/artwork'),
-    exact: true,
-    Component: lazy(() => import('./pages/artwork'))
-  },
-  {
-    key: '',
-    path: buildPath('/donate'),
-    exact: true,
-    Component: lazy(() => import('./pages/donate'))
-  }
-];
+import routes from './router/routes';
 
 const App = () => {
   return (
@@ -55,9 +14,7 @@ const App = () => {
             exact={exact}
             key={index}
             render={(props) => (
-              <Suspense fallback={() => <ActivityIndicator />}>
-                <Component {...props} />
-              </Suspense>
+              <Component {...props} />
             )}
           />
         ))}

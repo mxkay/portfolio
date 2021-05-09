@@ -1,22 +1,21 @@
-import { lazy, Suspense } from 'react';
 import Layout from '../components/Layout';
 import Intro from '../components/Intro';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import ActivityIndicator from '../components/ActivityIndicator';
 import Gate from '../components/Gate';
+import Container from '../components/Container';
 
-const Commission = () => (
+const Contact = () => (
   <Layout>
     <Intro />
     <Menu />
     <Gate>
-      <Suspense fallback={() => <ActivityIndicator />}>
-        <h1>Commission</h1>
-      </Suspense>
+      <Container scroll backdrop cover >
+        <h1>Contact</h1>
+      </Container>
     </Gate>
     <Footer />
   </Layout>
 );
 
-export default Commission;
+export default Contact;

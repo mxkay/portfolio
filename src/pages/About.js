@@ -10,7 +10,7 @@ const About = () => (
     <Intro />
     <Menu />
     <Gate>
-      <Container scroll cover background='linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.7) 90%, transparent 100%);' >
+      <Container scroll backdrop cover >
         <h1>About me</h1>
         <h2>Fullstack software engineer</h2>
         <p>Enjoys building applications that are accessible, robust, and performant.</p>
