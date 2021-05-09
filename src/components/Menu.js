@@ -36,7 +36,6 @@ const StyledMenu = styled.nav`
         padding: 0.2em 1em;
         text-decoration: none;
         font-weight: bold;
-        color: #DEF;
         outline: none;
         
         transform: skewX(-20deg);
