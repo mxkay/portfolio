@@ -14,7 +14,7 @@ const StyledBackground = styled.div.attrs(({ offsetX, offsetY }) => ({
   z-index: -999;
   width: 100%;
   height: 100%;
-  filter: hue-rotate(50deg) brightness(0.3) blur(2px);
+  filter: hue-rotate(50deg) brightness(0.3);
   background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1619937417/orion-nebula_tile_3000_h7ddhz.png);
   transition: all ${DELTA_TIME / 1000}s linear;
 `;
