@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div`
   ${({ cover }) => cover && 'width: 100%; height: 100%;'}
-  background: ${({ background }) => background};
+  background: ${({ backdrop }) => backdrop && 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, transparent 100%)'};
   color: ${({ color }) => color};
   padding: 1em;
   line-height: 1.8em;
