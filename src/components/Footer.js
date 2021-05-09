@@ -12,9 +12,10 @@ const StyledFoooter = styled.footer`
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "left center right";
-
+  
   &>* {
     align-self: flex-start;
+    margin: auto 0;
   }
 
   &>.left {
