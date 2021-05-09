@@ -54,10 +54,10 @@ const Footer = () => {
         <Emoji symbol='🌈🧾 ' />
         <span className={width < 1000 ? 'sr-only' : ''}>Learn about artwork on this site</span>
       </Link>
-      <Link to='/donate' className='right'>
-        <span className={width < 1000 ? 'sr-only' : ''}>Buy me a cup of coco</span>
+      <a href='https://www.buymeacoffee.com/mathilda' target='_blank' className='right'>
+        <span className={width < 1000 ? 'sr-only' : ''}>Buy me a coffee</span>
         <Emoji symbol=' 💵☕' />
-      </Link>
+      </a>
       <Subtle>
         <Link to='/developer' className='center'>
           <Emoji symbol='🔒' />
