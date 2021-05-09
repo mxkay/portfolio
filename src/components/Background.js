@@ -14,7 +14,7 @@ const StyledBackground = styled.div.attrs(({ offsetX, offsetY }) => ({
   z-index: -999;
   width: 100%;
   height: 100%;
-  filter: brightness(25%);
+  filter: hue-rotate(50deg) brightness(0.3) blur(2px);
   background-image: url(https://res.cloudinary.com/dzwu8mhc1/image/upload/v1619937417/orion-nebula_tile_3000_h7ddhz.png);
   transition: all ${DELTA_TIME / 1000}s linear;
 `;
@@ -24,7 +24,7 @@ const Background = props => {
   const backgroundVelocityRef = useRef();
 
   useEffect(() => {
-    const speed = 0.00005 * Math.max(window.innerWidth, window.innerHeight) * (Math.random() < 0.5 ? 1 : -1);
+    const speed = 0.00001 * Math.max(window.innerWidth, window.innerHeight) * (Math.random() < 0.5 ? 1 : -1);
     const angle = Math.PI / 3 * (Math.random() - 0.5);
     backgroundVelocityRef.current = {
       x: speed * Math.cos(angle),
