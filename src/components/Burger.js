@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const StyledBurger = styled.button`
-  font-size: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.4em;
   border: 0.2em solid rgba(0,0,0,0);
   background: transparent;
