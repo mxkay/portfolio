@@ -1,9 +1,7 @@
-import { lazy, Suspense } from 'react';
 import Layout from '../components/Layout';
 import Intro from '../components/Intro';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import ActivityIndicator from '../components/ActivityIndicator';
 import Gate from '../components/Gate';
 
 const Portfolio = () => (
@@ -11,9 +9,7 @@ const Portfolio = () => (
     <Intro />
     <Menu />
     <Gate>
-      <Suspense fallback={() => <ActivityIndicator />}>
-        <h1>Portfolio</h1>
-      </Suspense>
+      <h1>Portfolio coming soon</h1>
     </Gate>
     <Footer />
   </Layout>

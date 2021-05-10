@@ -17,7 +17,7 @@ const About = () => (
         
         <div style={{ padding: '1em 1em 0 2em' }}>
           <h3>Web and mobile applications</h3>
-          <p>Makes your idea come to life, using modern frameworks like React or React Native.</p>
+          <p>Makes big idea come to life, using modern frameworks like React or React Native.</p>
           <h3>Backend solutions</h3>
           <p>Builds performant APIs that make sense and get the job done.</p>
           <p>Skilled with both SQL and no-SQL databases.</p>
